@@ -115,19 +115,6 @@
     
     <url>
     
-<<<<<<< HEAD
-      <loc>/</loc>
-      <lastmod>2017-10-15T00:00:00+08:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-=======
->>>>>>> temp
       <loc>/categories/</loc>
       <priority>0</priority>
     </url>
@@ -183,8 +170,6 @@
     </url>
     
   
-<<<<<<< HEAD
-=======
     
     
     <url>
@@ -195,5 +180,4 @@
     </url>
     
   
->>>>>>> temp
 </urlset>

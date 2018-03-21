@@ -11,6 +11,101 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>FMR: functional meaning representation</title>
+      <link>/project/fmr/</link>
+      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/fmr/</guid>
+      <description>
+
+&lt;h2 id=&#34;element-types-in-fmr&#34;&gt;Element types in FMR&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Constants&lt;/strong&gt;: Refer to specific objects in the world. A constant can be a number, a lexical string, or an entity.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Classes&lt;/strong&gt;: Semantic category of entities. For example: &lt;code&gt;location.city&lt;/code&gt;, &lt;code&gt;math.number&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sub-class: &lt;em&gt;math.number ⊆ math.expression&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Template classes: classes with one or more parameters, for example: &lt;code&gt;t.list&amp;lt;c, m, n&amp;gt;&lt;/code&gt;, where &lt;code&gt;c&lt;/code&gt; is a class, &lt;code&gt;m&lt;/code&gt; and &lt;code&gt;n&lt;/code&gt; are integers.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Functions&lt;/strong&gt;: The major way to form larger language units from smaller ones. A function is comprised of a &lt;em&gt;name&lt;/em&gt;, a list of &lt;em&gt;core arguments&lt;/em&gt;, and a &lt;em&gt;return type&lt;/em&gt;.
+
+&lt;ul&gt;
+&lt;li&gt;Noun functions
+
+&lt;ul&gt;
+&lt;li&gt;Map entities to their properties or to other entities having specific relations withe the argument(s).&lt;/li&gt;
+&lt;li&gt;Are used to represent noun phrases in natural language.&lt;/li&gt;
+&lt;li&gt;Pronoun functions are special zero-argument noun functions.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Verb functions
+
+&lt;ul&gt;
+&lt;li&gt;Act as sentences or sub-sentences&lt;/li&gt;
+&lt;li&gt;The most important function type?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Modifier functions
+
+&lt;ul&gt;
+&lt;li&gt;Many functions can take additional &lt;em&gt;extended arguments&lt;/em&gt; as their modifiers.&lt;/li&gt;
+&lt;li&gt;Modifier functions often take the role of extended arguments to modify noun function, verb functions or other modifier functions.&lt;/li&gt;
+&lt;li&gt;Are used in FMR as the semantic representation of adjectives, adverb phrases (including conjunctive adverb phrases), and prepositional phrases in NL&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Entity Variables&lt;/strong&gt;: Variables are assigned to FMR nodes for indicating the co-reference of sub-trees to entities.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;features-of-fmr&#34;&gt;Features of FMR&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Strongly typed language
+
+&lt;ul&gt;
+&lt;li&gt;Type-compatibility: The type of each child of a function node should match the corresponding argument type of the function.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Open-domain type system.
+
+&lt;ul&gt;
+&lt;li&gt;Thousands of types&lt;/li&gt;
+&lt;li&gt;Other languages: At most 100+ in grammar level&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Built-in data structures
+
+&lt;ul&gt;
+&lt;li&gt;like &lt;code&gt;t.list&lt;/code&gt; and &lt;code&gt;nf.list&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;semantic-parsing-from-nl-to-fmr&#34;&gt;Semantic parsing from NL to FMR&lt;/h2&gt;
+
+&lt;p&gt;By using CFG rules to map natural language sentences and phrases to FMR&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;The product of 3 consecutive number is 60&amp;quot; =&amp;gt; 
+vf.be.equ(nf.math.product(nf.list(math.number, 3, mf.consecutive)), 60);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;缘起&#34;&gt;缘起&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;语义理解平台/语音助手（2013-今，腾讯/搜狗）
+
+&lt;ul&gt;
+&lt;li&gt;复合实体识别（CRF识别/规则识别/词表识别）&lt;/li&gt;
+&lt;li&gt;基于语言模型的查询意图理解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;基于语义模板的查询意图识别和语义信息抽取&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;通用CFG文法解析器：高效Earley算法的实现&lt;/li&gt;
+&lt;li&gt;意图识别，槽位填充&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;查询意图排序，基于候选意图结果的终判模块&lt;/li&gt;
+&lt;li&gt;下游分类别知识库系统/垂直搜索系统&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>gocc: Golang version OpenCC 繁簡轉換</title>
       <link>/project/gocc/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
@@ -80,31 +175,6 @@ func main() {
 &lt;li&gt;&lt;code&gt;tw2sp&lt;/code&gt; Traditional Chinese (Taiwan Standard) to Simplified Chinese with Mainland Chinese idiom&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;t2tw&lt;/code&gt; Traditional Chinese (OpenCC Standard) to Taiwan Standard&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;t2hk&lt;/code&gt; Traditional Chinese (OpenCC Standard) to Hong Kong Standard&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>FMR: functional meaning representation</title>
-      <link>/project/fmr/</link>
-      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/project/fmr/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;语义理解平台/语音助手（2013-今，腾讯/搜狗）
-
-&lt;ul&gt;
-&lt;li&gt;复合实体识别（CRF识别/规则识别/词表识别）&lt;/li&gt;
-&lt;li&gt;基于语言模型的查询意图理解&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;基于语义模板的查询意图识别和语义信息抽取&lt;/strong&gt;
-
-&lt;ul&gt;
-&lt;li&gt;通用CFG文法解析器：高效Earley算法的实现&lt;/li&gt;
-&lt;li&gt;意图识别，槽位填充&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;查询意图排序，基于候选意图结果的终判模块&lt;/li&gt;
-&lt;li&gt;下游分类别知识库系统/垂直搜索系统&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

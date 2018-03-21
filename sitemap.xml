@@ -5,7 +5,7 @@
     
     <url>
     
-      <loc>/project/gocc/</loc>
+      <loc>/project/fmr/</loc>
       <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     </url>
     
@@ -14,8 +14,8 @@
     
     <url>
     
-      <loc>/project/fmr/</loc>
-      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <loc>/project/gocc/</loc>
+      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -211,7 +211,7 @@
     <url>
     
       <loc>/tags/nlp/</loc>
-      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -221,7 +221,7 @@
     <url>
     
       <loc>/tags/nlu/</loc>
-      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -281,7 +281,7 @@
     <url>
     
       <loc>/tags/semantic-parsing/</loc>
-      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -17,7 +17,7 @@
       
     
   
-  <meta name="description" content=" 语义理解平台/语音助手（2013-今，腾讯/搜狗）  复合实体识别（CRF识别/规则识别/词表识别） 基于语言模型的查询意图理解 基于语义模板的查询意图识别和语义信息抽取  通用CFG文法解析器：高效Earley算法的实现 意图识别，槽位填充  查询意图排序，基于候选意图结果的终判模块 下游分类别知识库系统/垂直搜索系统   ">
+  <meta name="description" content="Element types in FMR  Constants: Refer to specific objects in the world. A constant can be a number, a lexical string, or an entity. Classes: Semantic category of entities. For example: location.city, math.number  Sub-class: math.number ⊆ math.expression Template classes: classes with one or more parameters, for example: t.list&lt;c, m, n&gt;, where c is a class, m and n are integers.  Functions: The major way to form larger language units from smaller ones.">
 
   
   <link rel="alternate" hreflang="en-us" href="/project/fmr/">
@@ -79,12 +79,12 @@
   <meta property="og:site_name" content="Zhanliang Liu">
   <meta property="og:url" content="/project/fmr/">
   <meta property="og:title" content="FMR: functional meaning representation | Zhanliang Liu">
-  <meta property="og:description" content=" 语义理解平台/语音助手（2013-今，腾讯/搜狗）  复合实体识别（CRF识别/规则识别/词表识别） 基于语言模型的查询意图理解 基于语义模板的查询意图识别和语义信息抽取  通用CFG文法解析器：高效Earley算法的实现 意图识别，槽位填充  查询意图排序，基于候选意图结果的终判模块 下游分类别知识库系统/垂直搜索系统   ">
+  <meta property="og:description" content="Element types in FMR  Constants: Refer to specific objects in the world. A constant can be a number, a lexical string, or an entity. Classes: Semantic category of entities. For example: location.city, math.number  Sub-class: math.number ⊆ math.expression Template classes: classes with one or more parameters, for example: t.list&lt;c, m, n&gt;, where c is a class, m and n are integers.  Functions: The major way to form larger language units from smaller ones.">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2017-04-27T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2018-02-16T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2017-04-27T00:00:00&#43;00:00">
+  <meta property="article:modified_time" content="2018-02-16T00:00:00&#43;00:00">
   
 
   
@@ -264,7 +264,77 @@
     
 
     <div class="article-style" itemprop="articleBody">
-      <ul>
+      
+
+<h2 id="element-types-in-fmr">Element types in FMR</h2>
+
+<ul>
+<li><strong>Constants</strong>: Refer to specific objects in the world. A constant can be a number, a lexical string, or an entity.</li>
+<li><strong>Classes</strong>: Semantic category of entities. For example: <code>location.city</code>, <code>math.number</code>
+
+<ul>
+<li>Sub-class: <em>math.number ⊆ math.expression</em></li>
+<li>Template classes: classes with one or more parameters, for example: <code>t.list&lt;c, m, n&gt;</code>, where <code>c</code> is a class, <code>m</code> and <code>n</code> are integers.</li>
+</ul></li>
+<li><strong>Functions</strong>: The major way to form larger language units from smaller ones. A function is comprised of a <em>name</em>, a list of <em>core arguments</em>, and a <em>return type</em>.
+
+<ul>
+<li>Noun functions
+
+<ul>
+<li>Map entities to their properties or to other entities having specific relations withe the argument(s).</li>
+<li>Are used to represent noun phrases in natural language.</li>
+<li>Pronoun functions are special zero-argument noun functions.</li>
+</ul></li>
+<li>Verb functions
+
+<ul>
+<li>Act as sentences or sub-sentences</li>
+<li>The most important function type?</li>
+</ul></li>
+<li>Modifier functions
+
+<ul>
+<li>Many functions can take additional <em>extended arguments</em> as their modifiers.</li>
+<li>Modifier functions often take the role of extended arguments to modify noun function, verb functions or other modifier functions.</li>
+<li>Are used in FMR as the semantic representation of adjectives, adverb phrases (including conjunctive adverb phrases), and prepositional phrases in NL</li>
+</ul></li>
+</ul></li>
+<li><strong>Entity Variables</strong>: Variables are assigned to FMR nodes for indicating the co-reference of sub-trees to entities.</li>
+</ul>
+
+<h2 id="features-of-fmr">Features of FMR</h2>
+
+<ul>
+<li>Strongly typed language
+
+<ul>
+<li>Type-compatibility: The type of each child of a function node should match the corresponding argument type of the function.</li>
+</ul></li>
+<li>Open-domain type system.
+
+<ul>
+<li>Thousands of types</li>
+<li>Other languages: At most 100+ in grammar level</li>
+</ul></li>
+<li>Built-in data structures
+
+<ul>
+<li>like <code>t.list</code> and <code>nf.list</code></li>
+</ul></li>
+</ul>
+
+<h2 id="semantic-parsing-from-nl-to-fmr">Semantic parsing from NL to FMR</h2>
+
+<p>By using CFG rules to map natural language sentences and phrases to FMR</p>
+
+<pre><code class="language-javascript">&quot;The product of 3 consecutive number is 60&quot; =&gt; 
+vf.be.equ(nf.math.product(nf.list(math.number, 3, mf.consecutive)), 60);
+</code></pre>
+
+<h2 id="缘起">缘起</h2>
+
+<ul>
 <li>语义理解平台/语音助手（2013-今，腾讯/搜狗）
 
 <ul>

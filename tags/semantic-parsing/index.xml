@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 27 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/semantic-parsing/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,10 +15,10 @@
     <item>
       <title>FMR: functional meaning representation</title>
       <link>/project/fmr/</link>
-      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/fmr/</guid>
-      <description> 语义理解平台/语音助手（2013-今，腾讯/搜狗）  复合实体识别（CRF识别/规则识别/词表识别） 基于语言模型的查询意图理解 基于语义模板的查询意图识别和语义信息抽取  通用CFG文法解析器：高效Earley算法的实现 意图识别，槽位填充  查询意图排序，基于候选意图结果的终判模块 下游分类别知识库系统/垂直搜索系统   </description>
+      <description>Element types in FMR  Constants: Refer to specific objects in the world. A constant can be a number, a lexical string, or an entity. Classes: Semantic category of entities. For example: location.city, math.number  Sub-class: math.number ⊆ math.expression Template classes: classes with one or more parameters, for example: t.list&amp;lt;c, m, n&amp;gt;, where c is a class, m and n are integers.  Functions: The major way to form larger language units from smaller ones.</description>
     </item>
     
   </channel>

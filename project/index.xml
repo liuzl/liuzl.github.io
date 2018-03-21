@@ -7,27 +7,66 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Deep Learning</title>
-      <link>/project/deep-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>gocc: Golang version OpenCC 繁簡轉換</title>
+      <link>/project/gocc/</link>
+      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/project/deep-learning/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
+      <guid>/project/gocc/</guid>
+      <description>Introduction 介紹 gocc is a golang port of OpenCC(Open Chinese Convert 開放中文轉換) which is a project for conversion between Traditional and Simplified Chinese developed by BYVoid.
+gocc stands for &amp;ldquo;Golang version OpenCC&amp;rdquo;, it is a total rewrite version of OpenCC by Go. It just borrows the dict files and config files of OpenCC, so it may not produce the same output with the original OpenCC.
+Installation 安裝 1, golang package go get github.</description>
     </item>
     
     <item>
-      <title>External Project</title>
-      <link>/project/example-external-project/</link>
+      <title>FMR: functional meaning representation</title>
+      <link>/project/fmr/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/fmr/</guid>
+      <description> 语义理解平台/语音助手（2013-今，腾讯/搜狗）  复合实体识别（CRF识别/规则识别/词表识别） 基于语言模型的查询意图理解 基于语义模板的查询意图识别和语义信息抽取  通用CFG文法解析器：高效Earley算法的实现 意图识别，槽位填充  查询意图排序，基于候选意图结果的终判模块 下游分类别知识库系统/垂直搜索系统   </description>
+    </item>
+    
+    <item>
+      <title>ling: A Natural Language Processing toolkit in Golang</title>
+      <link>/project/ling/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/ling/</guid>
+      <description>other NLP tools  Stanford CoreNLP Java spaCy Python lingo Golang  Multilingual text toknization  Unicode Standard Annex #29 blevesearch segment  Text normalization  Text normalization in Go  Lemmatization  词干提取（stemming）和词形还原（lemmatization）
+  Stemming and lemmatization Lemmatization ListsDatasets by MBM  The UniMorph Project 中文繁简转换  gocc Golang version OpenCC OpenCC Chinese-Character Jian&amp;lt;=&amp;gt;Fan converting library in Go Traditional and Simplified Chinese Conversion in Go Han unification   Tagging  Regex tagger  commonregex, a collection of common regular expressions for Go.</description>
+    </item>
+    
+    <item>
+      <title>Goobot: A general multilingual web article extractor</title>
+      <link>/project/goobot/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/example-external-project/</guid>
-      <description></description>
+      <guid>/project/goobot/</guid>
+      <description> 实现新闻网页标题、时间、正文、图片和视频的抽取 对全球多语种站点通用，高效稳定 代码开源：https://github.com/crawlerclub/ce 演示地址：http://goobot.org/  </description>
+    </item>
+    
+    <item>
+      <title>Knowledge extraction from web pages</title>
+      <link>/project/knowledge-extraction/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/project/knowledge-extraction/</guid>
+      <description> 数据源  某搜索引擎网页库 Common Crawl Corpus  根据号码在网页中出现的位置采用相应的方法  meta标签、microdata：结构化数据抽取 网页头尾：基于规则的抽取系统 网页正文：  人工总结号码信息特征（HTML标签结构特征，文本特征等） 机器学习进行信息抽取和分类    </description>
+    </item>
+    
+    <item>
+      <title>Web Crawling at Scale</title>
+      <link>/project/web-crawling/</link>
+      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/project/web-crawling/</guid>
+      <description>Web crawling is at the core of many data businesses. Whether you call it web crawling, web or screen scraping, or mining the web, it involves going to sites or json apis on the web, grabbing pages, and parsing them to pull out links, images, text, prices, titles, email addresses, and numerous other page attributes.</description>
     </item>
     
   </channel>

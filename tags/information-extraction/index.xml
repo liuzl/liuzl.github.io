@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Information extraction on Zhanliang Liu</title>
+    <link>/tags/information-extraction/</link>
+    <description>Recent content in Information extraction on Zhanliang Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/information-extraction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Knowledge extraction from web pages</title>
+      <link>/project/knowledge-extraction/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/project/knowledge-extraction/</guid>
+      <description> 数据源  某搜索引擎网页库 Common Crawl Corpus  根据号码在网页中出现的位置采用相应的方法  meta标签、microdata：结构化数据抽取 网页头尾：基于规则的抽取系统 网页正文：  人工总结号码信息特征（HTML标签结构特征，文本特征等） 机器学习进行信息抽取和分类    </description>
+    </item>
+    
+  </channel>
+</rss>

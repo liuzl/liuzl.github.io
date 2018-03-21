@@ -5,6 +5,33 @@
     
     <url>
     
+      <loc>/project/gocc/</loc>
+      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/project/fmr/</loc>
+      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/project/ling/</loc>
+      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -50,7 +77,7 @@
     
     <url>
     
-      <loc>/project/deep-learning/</loc>
+      <loc>/project/goobot/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -59,7 +86,7 @@
     
     <url>
     
-      <loc>/project/example-external-project/</loc>
+      <loc>/project/knowledge-extraction/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -88,6 +115,15 @@
     
       <loc>/publication/clothing-search/</loc>
       <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/project/web-crawling/</loc>
+      <lastmod>2013-04-27T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -124,7 +160,17 @@
     
     <url>
     
-      <loc>/tags/deep-learning/</loc>
+      <loc>/tags/chinese-translation/</loc>
+      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/crawling/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -134,8 +180,68 @@
     
     <url>
     
-      <loc>/tags/demo/</loc>
+      <loc>/tags/information-extraction/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/information-integration/</loc>
+      <lastmod>2013-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/lemmatization/</loc>
+      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/nlp/</loc>
+      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/nlu/</loc>
+      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/normalization/</loc>
+      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/opencc/</loc>
+      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -145,7 +251,7 @@
     <url>
     
       <loc>/project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -164,8 +270,68 @@
     
     <url>
     
+      <loc>/tags/scraping/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/semantic-parsing/</loc>
+      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/simplified-chinese/</loc>
+      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/tokenization/</loc>
+      <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/traditional-chinese/</loc>
+      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/web-crawling/</loc>
+      <lastmod>2013-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

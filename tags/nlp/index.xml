@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nlp on Zhanliang Liu</title>
+    <link>/tags/nlp/</link>
+    <description>Recent content in Nlp on Zhanliang Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 27 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FMR: functional meaning representation</title>
+      <link>/project/fmr/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/fmr/</guid>
+      <description> 语义理解平台/语音助手（2013-今，腾讯/搜狗）  复合实体识别（CRF识别/规则识别/词表识别） 基于语言模型的查询意图理解 基于语义模板的查询意图识别和语义信息抽取  通用CFG文法解析器：高效Earley算法的实现 意图识别，槽位填充  查询意图排序，基于候选意图结果的终判模块 下游分类别知识库系统/垂直搜索系统   </description>
+    </item>
+    
+    <item>
+      <title>ling: A Natural Language Processing toolkit in Golang</title>
+      <link>/project/ling/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/ling/</guid>
+      <description>other NLP tools  Stanford CoreNLP Java spaCy Python lingo Golang  Multilingual text toknization  Unicode Standard Annex #29 blevesearch segment  Text normalization  Text normalization in Go  Lemmatization  词干提取（stemming）和词形还原（lemmatization）
+  Stemming and lemmatization Lemmatization ListsDatasets by MBM  The UniMorph Project 中文繁简转换  gocc Golang version OpenCC OpenCC Chinese-Character Jian&amp;lt;=&amp;gt;Fan converting library in Go Traditional and Simplified Chinese Conversion in Go Han unification   Tagging  Regex tagger  commonregex, a collection of common regular expressions for Go.</description>
+    </item>
+    
+  </channel>
+</rss>

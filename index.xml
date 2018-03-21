@@ -11,6 +11,168 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>gocc: Golang version OpenCC 繁簡轉換</title>
+      <link>/project/gocc/</link>
+      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/gocc/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction-介紹&#34;&gt;Introduction 介紹&lt;/h2&gt;
+
+&lt;p&gt;gocc is a golang port of OpenCC(&lt;a href=&#34;https://github.com/BYVoid/OpenCC/&#34; target=&#34;_blank&#34;&gt;Open Chinese Convert 開放中文轉換&lt;/a&gt;) which is a project for conversion between Traditional and Simplified Chinese developed by &lt;a href=&#34;https://www.byvoid.com/&#34; target=&#34;_blank&#34;&gt;BYVoid&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;gocc stands for &amp;ldquo;&lt;strong&gt;Go&lt;/strong&gt;lang version Open&lt;strong&gt;CC&lt;/strong&gt;&amp;rdquo;, it is a total rewrite version of OpenCC by Go. It just borrows the dict files and config files of OpenCC, so it may not produce the same output with the original OpenCC.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation-安裝&#34;&gt;Installation 安裝&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-golang-package&#34;&gt;1, golang package&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go get github.com/liuzl/gocc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-command-line&#34;&gt;2, Command Line&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git clone https://github.com/liuzl/gocc
+cd gocc/cmd
+make install
+gocc --help
+echo &amp;quot;我们是工农子弟兵&amp;quot; | gocc
+#我們是工農子弟兵
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;usage-使用&#34;&gt;Usage 使用&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;github.com/liuzl/gocc&amp;quot;
+    &amp;quot;log&amp;quot;
+)
+
+func main() {
+    s2t, err := gocc.New(&amp;quot;s2t&amp;quot;)
+    if err != nil {
+        log.Fatal(err)
+    }
+    in := `自然语言处理是人工智能领域中的一个重要方向。`
+    out, err := s2t.Convert(in)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf(&amp;quot;%s\n%s\n&amp;quot;, in, out)
+    //自然语言处理是人工智能领域中的一个重要方向。
+    //自然語言處理是人工智能領域中的一個重要方向。
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conversions&#34;&gt;Conversions&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;s2t&lt;/code&gt; Simplified Chinese to Traditional Chinese&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;t2s&lt;/code&gt; Traditional Chinese to Simplified Chinese&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s2tw&lt;/code&gt; Simplified Chinese to Traditional Chinese (Taiwan Standard)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tw2s&lt;/code&gt; Traditional Chinese (Taiwan Standard) to Simplified Chinese&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s2hk&lt;/code&gt; Simplified Chinese to Traditional Chinese (Hong Kong Standard)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hk2s&lt;/code&gt; Traditional Chinese (Hong Kong Standard) to Simplified Chinese&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s2twp&lt;/code&gt; Simplified Chinese to Traditional Chinese (Taiwan Standard) with Taiwanese idiom&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tw2sp&lt;/code&gt; Traditional Chinese (Taiwan Standard) to Simplified Chinese with Mainland Chinese idiom&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;t2tw&lt;/code&gt; Traditional Chinese (OpenCC Standard) to Taiwan Standard&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;t2hk&lt;/code&gt; Traditional Chinese (OpenCC Standard) to Hong Kong Standard&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FMR: functional meaning representation</title>
+      <link>/project/fmr/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/fmr/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;语义理解平台/语音助手（2013-今，腾讯/搜狗）
+
+&lt;ul&gt;
+&lt;li&gt;复合实体识别（CRF识别/规则识别/词表识别）&lt;/li&gt;
+&lt;li&gt;基于语言模型的查询意图理解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;基于语义模板的查询意图识别和语义信息抽取&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;通用CFG文法解析器：高效Earley算法的实现&lt;/li&gt;
+&lt;li&gt;意图识别，槽位填充&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;查询意图排序，基于候选意图结果的终判模块&lt;/li&gt;
+&lt;li&gt;下游分类别知识库系统/垂直搜索系统&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ling: A Natural Language Processing toolkit in Golang</title>
+      <link>/project/ling/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/ling/</guid>
+      <description>
+
+&lt;h2 id=&#34;other-nlp-tools&#34;&gt;other NLP tools&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stanfordnlp.github.io/CoreNLP/index.html&#34; target=&#34;_blank&#34;&gt;Stanford CoreNLP&lt;/a&gt; Java&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://spacy.io/&#34; target=&#34;_blank&#34;&gt;spaCy&lt;/a&gt; Python&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chewxy/lingo&#34; target=&#34;_blank&#34;&gt;lingo&lt;/a&gt; Golang&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;multilingual-text-toknization&#34;&gt;Multilingual text toknization&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.unicode.org/reports/tr29/&#34; target=&#34;_blank&#34;&gt;Unicode Standard Annex #29&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/liuzl/segment&#34; target=&#34;_blank&#34;&gt;blevesearch segment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;text-normalization&#34;&gt;Text normalization&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.golang.org/normalization&#34; target=&#34;_blank&#34;&gt;Text normalization in Go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;lemmatization&#34;&gt;Lemmatization&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;词干提取（stemming）和词形还原（lemmatization）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html&#34; target=&#34;_blank&#34;&gt;Stemming and lemmatization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.lexiconista.com/datasets/lemmatization/&#34; target=&#34;_blank&#34;&gt;Lemmatization Lists&lt;/a&gt;&lt;em&gt;&lt;sub&gt;Datasets by MBM &lt;/sub&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://unimorph.github.io/&#34; target=&#34;_blank&#34;&gt;The UniMorph Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文繁简转换
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/liuzl/gocc&#34; target=&#34;_blank&#34;&gt;gocc&lt;/a&gt; Golang version OpenCC&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/BYVoid/OpenCC&#34; target=&#34;_blank&#34;&gt;OpenCC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/go-cc/cc-jianfan&#34; target=&#34;_blank&#34;&gt;Chinese-Character Jian&amp;lt;=&amp;gt;Fan converting library in Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/siongui/gojianfan&#34; target=&#34;_blank&#34;&gt;Traditional and Simplified Chinese Conversion in Go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Han_unification&#34; target=&#34;_blank&#34;&gt;Han unification&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tagging&#34;&gt;Tagging&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Regex tagger
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mingrammer/commonregex&#34; target=&#34;_blank&#34;&gt;commonregex&lt;/a&gt;, a collection of common regular expressions for Go.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mvdan/xurls&#34; target=&#34;_blank&#34;&gt;xurls&lt;/a&gt;, a Go package of regex for urls.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Example Talk</title>
       <link>/talk/example-talk/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
@@ -21,30 +183,47 @@
     </item>
     
     <item>
-      <title>Deep Learning</title>
-      <link>/project/deep-learning/</link>
+      <title>Goobot: A general multilingual web article extractor</title>
+      <link>/project/goobot/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/deep-learning/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+      <guid>/project/goobot/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;实现新闻网页标题、时间、正文、图片和视频的抽取&lt;/li&gt;
+&lt;li&gt;对全球多语种站点通用，高效稳定&lt;/li&gt;
+&lt;li&gt;代码开源：&lt;a href=&#34;https://github.com/crawlerclub/ce&#34; target=&#34;_blank&#34;&gt;https://github.com/crawlerclub/ce&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;演示地址：&lt;a href=&#34;http://goobot.org/&#34; target=&#34;_blank&#34;&gt;http://goobot.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>External Project</title>
-      <link>/project/example-external-project/</link>
+      <title>Knowledge extraction from web pages</title>
+      <link>/project/knowledge-extraction/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/example-external-project/</guid>
-      <description></description>
+      <guid>/project/knowledge-extraction/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;数据源
+
+&lt;ul&gt;
+&lt;li&gt;某搜索引擎网页库&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://commoncrawl.org/&#34; target=&#34;_blank&#34;&gt;Common Crawl Corpus&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;根据号码在网页中出现的位置采用相应的方法
+
+&lt;ul&gt;
+&lt;li&gt;meta标签、microdata：结构化数据抽取&lt;/li&gt;
+&lt;li&gt;网页头尾：基于规则的抽取系统&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;网页正文&lt;/strong&gt;：
+
+&lt;ul&gt;
+&lt;li&gt;人工总结号码信息特征（HTML标签结构特征，文本特征等）&lt;/li&gt;
+&lt;li&gt;机器学习进行信息抽取和分类&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -252,6 +431,16 @@ git submodule update --init --recursive
       
       <guid>/publication/clothing-search/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Web Crawling at Scale</title>
+      <link>/project/web-crawling/</link>
+      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/project/web-crawling/</guid>
+      <description>&lt;p&gt;Web crawling is at the core of many data businesses. Whether you call it web crawling, web or screen scraping, or mining the web, it involves going to sites or json apis on the web, grabbing pages, and parsing them to pull out links, images, text, prices, titles, email addresses, and numerous other page attributes.&lt;/p&gt;
 </description>
     </item>
     

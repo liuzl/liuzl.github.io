@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>System on Zhanliang Liu</title>
+    <link>/tags/system/</link>
+    <description>Recent content in System on Zhanliang Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 11 Jul 2015 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux process and thread</title>
+      <link>/post/linux-process-and-thread/</link>
+      <pubDate>Sat, 11 Jul 2015 00:00:00 +0800</pubDate>
+      
+      <guid>/post/linux-process-and-thread/</guid>
+      <description>In Linux, fork() is used to create new processes. These new processes are called as child processes and each child process initially shares all the segments like text, stack, heap etc until child tries to make any change to stack or heap. In case of any change, a seperate copy of stack and heap segments are prepared for child so that changes remain child specific. The text segment is read-only so both parent and child share the same text segment.</description>
+    </item>
+    
+  </channel>
+</rss>

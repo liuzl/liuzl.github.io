@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>Illustration of the logistic map</title>
+      <link>/post/logistic-map/</link>
+      <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
+      
+      <guid>/post/logistic-map/</guid>
+      <description>Illustration of the logistic map, $x_{n+1} = f(x_n) = r \cdot x_n \cdot (1 - x_n)$
+At $r_1=3$, a stable period $2^1=2$ orbit is born. At $r_2=3.449$ a stable period $2^2=4$ orbit is born. As $r$ continues to increase, the period doublings continue until $r_{\infty} \approx 3.56995$ after which chaotic dynamics begin to occur, interspersed with periodic windows.
+The Feigeinbaum constant $\delta=4.6692\dots$ is the ratio of subsequent differences between the values of $r_n$ at which the period doubles, as $n$ approaches infinity.</description>
+    </item>
+    
+    <item>
       <title>Academic: the website designer for Hugo</title>
       <link>/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
@@ -22,6 +33,15 @@
 
 Key features:
  Easily manage various content including homepage, blog posts, publications, talks, and projects Extensible via color themes and widgets/plugins Write in Markdown for easy formatting and code highlighting, with LaTeX for mathematical expressions Social/academic network linking, Google Analytics, and Disqus comments Responsive and mobile friendly Simple and refreshing one page design Multilingual and easy to customize  Color Themes Academic is available in different color themes and font themes.</description>
+    </item>
+    
+    <item>
+      <title>Linux process and thread</title>
+      <link>/post/linux-process-and-thread/</link>
+      <pubDate>Sat, 11 Jul 2015 00:00:00 +0800</pubDate>
+      
+      <guid>/post/linux-process-and-thread/</guid>
+      <description>In Linux, fork() is used to create new processes. These new processes are called as child processes and each child process initially shares all the segments like text, stack, heap etc until child tries to make any change to stack or heap. In case of any change, a seperate copy of stack and heap segments are prepared for child so that changes remain child specific. The text segment is read-only so both parent and child share the same text segment.</description>
     </item>
     
   </channel>

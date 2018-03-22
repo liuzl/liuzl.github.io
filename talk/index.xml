@@ -13,12 +13,30 @@
     
     
     <item>
-      <title>Example Talk</title>
-      <link>/talk/example-talk/</link>
+      <title>『大数据』方法论及示例</title>
+      <link>/talk/bigdata-cufe/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
       
-      <guid>/talk/example-talk/</guid>
-      <description>Embed your slides or video here using shortcodes. Further details can easily be added using Markdown and $\rm \LaTeX$ math code.</description>
+      <guid>/talk/bigdata-cufe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>人工智能的过去、现在和未来</title>
+      <link>/talk/ai-sif100/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
+      
+      <guid>/talk/ai-sif100/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>大数据的“能”与“不能”</title>
+      <link>/talk/bigdata-ether-n5/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
+      
+      <guid>/talk/bigdata-ether-n5/</guid>
+      <description></description>
     </item>
     
   </channel>

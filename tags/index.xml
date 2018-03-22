@@ -22,6 +22,24 @@
     </item>
     
     <item>
+      <title>Ai</title>
+      <link>/tags/ai/</link>
+      <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chaos</title>
+      <link>/tags/chaos/</link>
+      <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/chaos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Chinese-translation</title>
       <link>/tags/chinese-translation/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
@@ -63,6 +81,24 @@
       <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/lemmatization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Sat, 11 Jul 2015 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logistic map</title>
+      <link>/tags/logistic-map/</link>
+      <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/logistic-map/</guid>
       <description></description>
     </item>
     
@@ -126,6 +162,15 @@
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/simplified-chinese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>System</title>
+      <link>/tags/system/</link>
+      <pubDate>Sat, 11 Jul 2015 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/system/</guid>
       <description></description>
     </item>
     

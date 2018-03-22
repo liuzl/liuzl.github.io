@@ -23,6 +23,15 @@
     
     <url>
     
+      <loc>/post/logistic-map/</loc>
+      <lastmod>2017-06-16T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/project/ling/</loc>
       <lastmod>2017-04-27T00:00:00+00:00</lastmod>
     </url>
@@ -59,7 +68,7 @@
     
     <url>
     
-      <loc>/talk/example-talk/</loc>
+      <loc>/post/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
     
@@ -68,7 +77,25 @@
     
     <url>
     
-      <loc>/post/</loc>
+      <loc>/talk/bigdata-cufe/</loc>
+      <lastmod>2017-01-01T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/ai-sif100/</loc>
+      <lastmod>2017-01-01T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/bigdata-ether-n5/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
     
@@ -106,6 +133,15 @@
     
       <loc>/publication/person-re-identification/</loc>
       <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/post/linux-process-and-thread/</loc>
+      <lastmod>2015-07-11T00:00:00+08:00</lastmod>
     </url>
     
   
@@ -151,7 +187,27 @@
     
     <url>
     
+      <loc>/tags/ai/</loc>
+      <lastmod>2017-06-16T00:00:00+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/chaos/</loc>
+      <lastmod>2017-06-16T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -202,6 +258,26 @@
     
       <loc>/tags/lemmatization/</loc>
       <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/linux/</loc>
+      <lastmod>2015-07-11T00:00:00+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/logistic-map/</loc>
+      <lastmod>2017-06-16T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -292,6 +368,16 @@
     
       <loc>/tags/simplified-chinese/</loc>
       <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/system/</loc>
+      <lastmod>2015-07-11T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -18,8 +18,6 @@
       <guid>/post/weighted-random/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;/img/random_post_img.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;First of all what is weighted random? Let&amp;rsquo;s say you have a list of items and you want to pick one of them randomly. Doing this seems easy as all that&amp;rsquo;s required is to write a litte function that generates a random index referring to the one of the items in the list. But sometimes plain randomness is not enough, we want random results that are biased or based on some probability. This is where the weighted random generation algorithm needed.&lt;/p&gt;

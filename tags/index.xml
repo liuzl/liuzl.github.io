@@ -31,6 +31,24 @@
     </item>
     
     <item>
+      <title>Algorithm</title>
+      <link>/tags/algorithm/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alias method</title>
+      <link>/tags/alias-method/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/alias-method/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Chaos</title>
       <link>/tags/chaos/</link>
       <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
@@ -139,6 +157,15 @@
     </item>
     
     <item>
+      <title>Sampling</title>
+      <link>/tags/sampling/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/sampling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Scraping</title>
       <link>/tags/scraping/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
@@ -198,6 +225,15 @@
       <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
       
       <guid>/tags/web-crawling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Weighted random</title>
+      <link>/tags/weighted-random/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/weighted-random/</guid>
       <description></description>
     </item>
     

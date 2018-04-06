@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/post/weighted-random/</loc>
+      <lastmod>2018-04-06T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/project/fmr/</loc>
       <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     </url>
@@ -197,6 +206,26 @@
     
     <url>
     
+      <loc>/tags/algorithm/</loc>
+      <lastmod>2018-04-06T00:00:00+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/alias-method/</loc>
+      <lastmod>2018-04-06T00:00:00+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/</loc>
       <priority>0</priority>
     </url>
@@ -346,6 +375,16 @@
     
     <url>
     
+      <loc>/tags/sampling/</loc>
+      <lastmod>2018-04-06T00:00:00+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/scraping/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -418,6 +457,16 @@
     
       <loc>/tags/web-crawling/</loc>
       <lastmod>2013-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/weighted-random/</loc>
+      <lastmod>2018-04-06T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sampling on Zhanliang Liu</title>
+    <link>/tags/sampling/</link>
+    <description>Recent content in Sampling on Zhanliang Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/sampling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Weighted Random: algorithms for sampling from discrete probability distributions</title>
+      <link>/post/weighted-random/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/post/weighted-random/</guid>
+      <description>Introduction First of all what is weighted random? Let&amp;rsquo;s say you have a list of items and you want to pick one of them randomly. Doing this seems easy as all that&amp;rsquo;s required is to write a litte function that generates a random index referring to the one of the items in the list. But sometimes plain randomness is not enough, we want random results that are biased or based on some probability.</description>
+    </item>
+    
+  </channel>
+</rss>

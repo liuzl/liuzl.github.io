@@ -11,6 +11,175 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Weighted Random: algorithms for sampling from discrete probability distributions</title>
+      <link>/post/weighted-random/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/post/weighted-random/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;/img/random_post_img.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;First of all what is weighted random? Let&amp;rsquo;s say you have a list of items and you want to pick one of them randomly. Doing this seems easy as all that&amp;rsquo;s required is to write a litte function that generates a random index referring to the one of the items in the list. But sometimes plain randomness is not enough, we want random results that are biased or based on some probability. This is where the weighted random generation algorithm needed.&lt;/p&gt;
+
+&lt;h2 id=&#34;scenarios&#34;&gt;Scenarios&lt;/h2&gt;
+
+&lt;p&gt;There are lots of real world scenarios that need weighted random. Such as load balancers(like &lt;a href=&#34;https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/&#34; target=&#34;_blank&#34;&gt;nginx&lt;/a&gt;, haproxy etc). Following is an example configuration of nginx. In the example, &lt;code&gt;backend1.example.com&lt;/code&gt; has weight &lt;code&gt;5&lt;/code&gt;; the other two servers have the default weight &lt;code&gt;1&lt;/code&gt;, With this configuration of weights, out of every seven requests, five are sent to &lt;code&gt;backend1.example.com&lt;/code&gt; and one to &lt;code&gt;backend2.example.com&lt;/code&gt; one to &lt;code&gt;backend3.example.com&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-nginx&#34;&gt;http {
+    upstream backend {
+        server backend1.example.com weight=5;
+        server backend2.example.com;
+        server backend3.example.com;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Another example is crawler scheduling. When I was developing a concurrent &lt;a href=&#34;https://github.com/crawlerclub/x&#34; target=&#34;_blank&#34;&gt;crawling framework&lt;/a&gt; last year, I need to schedule the crawling tasks according to the task importenceness. The tasks importenceness are expressed by float value weights that are mannually assigned to each site that tasks belong to. So there should be a &lt;a href=&#34;https://github.com/crawlerclub/x/blob/master/controller/crawler_scheduler.go#L45&#34; target=&#34;_blank&#34;&gt;WeightedChoice&lt;/a&gt; function on the scheduler of the crawler system that determines which task should be scheduled the next time.&lt;/p&gt;
+
+&lt;p&gt;In the negative sampling part of the famous &lt;code&gt;word2vec&lt;/code&gt;, the algorithm needs to randomly sample some negative words according to their frequencies in the corpus. &lt;a href=&#34;https://github.com/tmikolov/word2vec/blob/master/word2vec.c#L527&#34; target=&#34;_blank&#34;&gt;Codes link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are more examples in game developing: In games we often encounter random dropping of specified items by certain drop probability, such as falling silver coins 25%, gold coins 20%, diamonds 10%, equipment 5%, accessories 40%. The next dropped item type is now required to meet the above probability.&lt;/p&gt;
+
+&lt;h2 id=&#34;solutions&#34;&gt;Solutions&lt;/h2&gt;
+
+&lt;h3 id=&#34;solution-1&#34;&gt;Solution 1&lt;/h3&gt;
+
+&lt;p&gt;The first method came up to me is to extend the uniform distributed random number generator. Let&amp;rsquo;s begin with an example(all example programmes here after will be writen in Golang):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;var items   = []int{0, 1, 2, 3}
+var weights = []float32{0.1, 0.3, 0.4, 0.2}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Making them conform to the weights what we’d do is something simple. Basically repeat the items 10x or even 100x times based on the numbers we have. So let’s say we’re repeating 10x times, this is the list we’ll end up with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;var choices = []int{0, 1, 1, 1, 2, 2, 2, 2, 3, 3}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then we can randomly choose a value from &lt;code&gt;choices&lt;/code&gt;, and we are done. Full codes bellow:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;math/rand&amp;quot;
+)
+
+func WeightedRandomS1(weights []float32) int {
+    if len(weights) == 0 {
+        return 0
+    }
+    var choices []int
+    for i, w := range weights {
+        wi := int(w * 10)
+        for j := 0; j &amp;lt; wi; j++ {
+            choices = append(choices, i)
+        }
+    }
+    return choices[rand.Int()%len(choices)]
+}
+
+func main() {
+    for i := 0; i &amp;lt; 100; i++ {
+        fmt.Println(WeightedRandom([]float32{0.1, 0.3, 0.6}))
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In &lt;code&gt;word2vec&lt;/code&gt;, this solution is adopted.&lt;/p&gt;
+
+&lt;h3 id=&#34;solution-2&#34;&gt;Solution 2&lt;/h3&gt;
+
+&lt;p&gt;The first solution takes too much memory, then came solution 2: Compute the discrete cumulative density function (CDF) of the list &amp;ndash; or in simple terms the array of cumulative sums of the weights. Then generate a random number in the range between 0 and the sum of all weights, do a linear search to find this random number in your discrete CDF array and get the value corresponding to this entry &amp;ndash; this is the weighted random number. Binary search could reduce the time complexity from $O(n)$ to $O(log(n))$.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func WeightedRandomS2(weights []float32) int {
+    if len(weights) == 0 {
+        return 0
+    }
+    var sum float32 = 0.0
+    for _, w := range weights {
+        sum += w
+    }
+    r := rand.Float32() * sum
+    for i, w := range weights {
+        r -= w
+        if r &amp;lt; 0 {
+            return i
+        }
+    }
+    return len(weights) - 1
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I used this solution in the scheduler of &lt;a href=&#34;https://github.com/crawlerclub/x&#34; target=&#34;_blank&#34;&gt;crawling framework&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;solution-3&#34;&gt;Solution 3&lt;/h3&gt;
+
+&lt;p&gt;The optimal solution for weighted random should be the &lt;a href=&#34;https://en.wikipedia.org/wiki/Alias_method&#34; target=&#34;_blank&#34;&gt;Alias Method&lt;/a&gt;. It requires $O(n)$ time to initialize, $O(1)$ time to make a selection, and $O(n)$ memory. A golang version implementation is &lt;a href=&#34;https://github.com/liuzl/alias&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;algorithm-vose-s-alias-method&#34;&gt;Algorithm: Vose&amp;rsquo;s Alias Method&lt;/h4&gt;
+
+&lt;h5 id=&#34;initialization&#34;&gt;Initialization:&lt;/h5&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create arrays $Alias$ and $Prob$, each of size $n$.&lt;/li&gt;
+&lt;li&gt;Create two worklists, $Small$ and $Large$.&lt;/li&gt;
+&lt;li&gt;Multiply each probability by $n$.&lt;/li&gt;
+&lt;li&gt;For each scaled probability $p_i$:
+
+&lt;ol&gt;
+&lt;li&gt;If $p_i&amp;lt;1$, add $i$ to $Small$.&lt;/li&gt;
+&lt;li&gt;Otherwise $p_i \geqslant 1$, add $i$ to $Large$.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;While $Small$ and $Large$ are not empty: ($Large$ might be emptied first)
+
+&lt;ol&gt;
+&lt;li&gt;Remove the first element from $Small$; call it $l$.&lt;/li&gt;
+&lt;li&gt;Remove the first element from $Large$; call it $g$.&lt;/li&gt;
+&lt;li&gt;Set $Prob[l]=p_l$.&lt;/li&gt;
+&lt;li&gt;Set $Alias[l]=g$.&lt;/li&gt;
+&lt;li&gt;Set $p_g = p_g + p_l - 1$. (This is a more numerically stable option)&lt;/li&gt;
+&lt;li&gt;If $p_g&amp;lt;1$, add $g$ to $Small$.&lt;/li&gt;
+&lt;li&gt;Otherwise $p_g \geqslant 1$, add $g$ to $Large$.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;While $Large$ is not empty:
+
+&lt;ol&gt;
+&lt;li&gt;Remove the first element from $Large$; call it $g$.&lt;/li&gt;
+&lt;li&gt;Set $Prob[g] = 1$.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;While $Small$ is not empty: This is only possible due to numerical instability.
+
+&lt;ol&gt;
+&lt;li&gt;Remove the first element from $Small$; call it $l$.&lt;/li&gt;
+&lt;li&gt;Set $Prob[l] = 1$.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&#34;generation&#34;&gt;Generation:&lt;/h5&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Generate a fair die roll from an n-sided die; call the side $i$.&lt;/li&gt;
+&lt;li&gt;Flip a biased coin that comes up heads with probability $Prob[i]$.&lt;/li&gt;
+&lt;li&gt;If the coin comes up &amp;ldquo;heads&amp;rdquo;, return $i$.&lt;/li&gt;
+&lt;li&gt;Otherwise, return $Alias[i]$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Walker, A. J. 1977. &amp;ldquo;An efficient method for generating discrete random variable with general distributions.&amp;rdquo; &lt;em&gt;ACM Transactions on Mathematical Software&lt;/em&gt; &lt;strong&gt;3&lt;/strong&gt; 253–256.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;&lt;a href=&#34;http://www.keithschwarz.com/darts-dice-coins/&#34; target=&#34;_blank&#34;&gt;Darts, Dice, and Coins: Sampling from a Discrete Distribution&lt;/a&gt;&amp;rdquo;. &lt;em&gt;Keith Schwarz&lt;/em&gt;, December 29, 2011&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Alias_method&#34; target=&#34;_blank&#34;&gt;Alias method&lt;/a&gt;. &lt;em&gt;Wikipedia&lt;/em&gt;, April 5, 2018&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/4463561/weighted-random-selection-from-array&#34; target=&#34;_blank&#34;&gt;Weighted random selection from array
+&lt;/a&gt;, &lt;em&gt;stackoverflow&lt;/em&gt;, Dec 16 2010&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>FMR: functional meaning representation</title>
       <link>/project/fmr/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>

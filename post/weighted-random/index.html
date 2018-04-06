@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.38-DEV" />
+  <meta name="author" content="Zhanliang Liu">
+
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="Introduction First of all what is weighted random? Let&rsquo;s say you have a list of items and you want to pick one of them randomly. Doing this seems easy as all that&rsquo;s required is to write a litte function that generates a random index referring to the one of the items in the list. But sometimes plain randomness is not enough, we want random results that are biased or based on some probability.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/weighted-random/">
+
+  
+
+
+  
+
+  
+  
+  <meta name="theme-color" content="#0095eb">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Zhanliang Liu">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Zhanliang Liu">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/weighted-random/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@liuzl">
+  <meta property="twitter:creator" content="@liuzl">
+  
+  <meta property="og:site_name" content="Zhanliang Liu">
+  <meta property="og:url" content="/post/weighted-random/">
+  <meta property="og:title" content="Weighted Random: algorithms for sampling from discrete probability distributions | Zhanliang Liu">
+  <meta property="og:description" content="Introduction First of all what is weighted random? Let&rsquo;s say you have a list of items and you want to pick one of them randomly. Doing this seems easy as all that&rsquo;s required is to write a litte function that generates a random index referring to the one of the items in the list. But sometimes plain randomness is not enough, we want random results that are biased or based on some probability.">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-04-05T00:00:00&#43;08:00">
+  
+  <meta property="article:modified_time" content="2018-04-06T00:00:00&#43;08:00">
+  
+
+  
+
+  <title>Weighted Random: algorithms for sampling from discrete probability distributions | Zhanliang Liu</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Zhanliang Liu</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Weighted Random: algorithms for sampling from discrete probability distributions</h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+        Last updated on
+    
+    <time datetime="2018-04-05 00:00:00 &#43;0800 CST" itemprop="datePublished dateModified">
+      Apr 6, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Zhanliang Liu">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Weighted%20Random%3a%20algorithms%20for%20sampling%20from%20discrete%20probability%20distributions&amp;url=%2fpost%2fweighted-random%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fweighted-random%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fweighted-random%2f&amp;title=Weighted%20Random%3a%20algorithms%20for%20sampling%20from%20discrete%20probability%20distributions"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fweighted-random%2f&amp;title=Weighted%20Random%3a%20algorithms%20for%20sampling%20from%20discrete%20probability%20distributions"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Weighted%20Random%3a%20algorithms%20for%20sampling%20from%20discrete%20probability%20distributions&amp;body=%2fpost%2fweighted-random%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><img src="/img/random_post_img.png" alt="png" /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>First of all what is weighted random? Let&rsquo;s say you have a list of items and you want to pick one of them randomly. Doing this seems easy as all that&rsquo;s required is to write a litte function that generates a random index referring to the one of the items in the list. But sometimes plain randomness is not enough, we want random results that are biased or based on some probability. This is where the weighted random generation algorithm needed.</p>
+
+<h2 id="scenarios">Scenarios</h2>
+
+<p>There are lots of real world scenarios that need weighted random. Such as load balancers(like <a href="https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/" target="_blank">nginx</a>, haproxy etc). Following is an example configuration of nginx. In the example, <code>backend1.example.com</code> has weight <code>5</code>; the other two servers have the default weight <code>1</code>, With this configuration of weights, out of every seven requests, five are sent to <code>backend1.example.com</code> and one to <code>backend2.example.com</code> one to <code>backend3.example.com</code>.</p>
+
+<pre><code class="language-nginx">http {
+    upstream backend {
+        server backend1.example.com weight=5;
+        server backend2.example.com;
+        server backend3.example.com;
+    }
+}
+</code></pre>
+
+<p>Another example is crawler scheduling. When I was developing a concurrent <a href="https://github.com/crawlerclub/x" target="_blank">crawling framework</a> last year, I need to schedule the crawling tasks according to the task importenceness. The tasks importenceness are expressed by float value weights that are mannually assigned to each site that tasks belong to. So there should be a <a href="https://github.com/crawlerclub/x/blob/master/controller/crawler_scheduler.go#L45" target="_blank">WeightedChoice</a> function on the scheduler of the crawler system that determines which task should be scheduled the next time.</p>
+
+<p>In the negative sampling part of the famous <code>word2vec</code>, the algorithm needs to randomly sample some negative words according to their frequencies in the corpus. <a href="https://github.com/tmikolov/word2vec/blob/master/word2vec.c#L527" target="_blank">Codes link</a>.</p>
+
+<p>There are more examples in game developing: In games we often encounter random dropping of specified items by certain drop probability, such as falling silver coins 25%, gold coins 20%, diamonds 10%, equipment 5%, accessories 40%. The next dropped item type is now required to meet the above probability.</p>
+
+<h2 id="solutions">Solutions</h2>
+
+<h3 id="solution-1">Solution 1</h3>
+
+<p>The first method came up to me is to extend the uniform distributed random number generator. Let&rsquo;s begin with an example(all example programmes here after will be writen in Golang):</p>
+
+<pre><code class="language-go">var items   = []int{0, 1, 2, 3}
+var weights = []float32{0.1, 0.3, 0.4, 0.2}
+</code></pre>
+
+<p>Making them conform to the weights what we’d do is something simple. Basically repeat the items 10x or even 100x times based on the numbers we have. So let’s say we’re repeating 10x times, this is the list we’ll end up with:</p>
+
+<pre><code class="language-go">var choices = []int{0, 1, 1, 1, 2, 2, 2, 2, 3, 3}
+</code></pre>
+
+<p>Then we can randomly choose a value from <code>choices</code>, and we are done. Full codes bellow:</p>
+
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math/rand&quot;
+)
+
+func WeightedRandomS1(weights []float32) int {
+    if len(weights) == 0 {
+        return 0
+    }
+    var choices []int
+    for i, w := range weights {
+        wi := int(w * 10)
+        for j := 0; j &lt; wi; j++ {
+            choices = append(choices, i)
+        }
+    }
+    return choices[rand.Int()%len(choices)]
+}
+
+func main() {
+    for i := 0; i &lt; 100; i++ {
+        fmt.Println(WeightedRandom([]float32{0.1, 0.3, 0.6}))
+    }
+}
+</code></pre>
+
+<p>In <code>word2vec</code>, this solution is adopted.</p>
+
+<h3 id="solution-2">Solution 2</h3>
+
+<p>The first solution takes too much memory, then came solution 2: Compute the discrete cumulative density function (CDF) of the list &ndash; or in simple terms the array of cumulative sums of the weights. Then generate a random number in the range between 0 and the sum of all weights, do a linear search to find this random number in your discrete CDF array and get the value corresponding to this entry &ndash; this is the weighted random number. Binary search could reduce the time complexity from $O(n)$ to $O(log(n))$.</p>
+
+<pre><code class="language-go">func WeightedRandomS2(weights []float32) int {
+    if len(weights) == 0 {
+        return 0
+    }
+    var sum float32 = 0.0
+    for _, w := range weights {
+        sum += w
+    }
+    r := rand.Float32() * sum
+    for i, w := range weights {
+        r -= w
+        if r &lt; 0 {
+            return i
+        }
+    }
+    return len(weights) - 1
+}
+</code></pre>
+
+<p>I used this solution in the scheduler of <a href="https://github.com/crawlerclub/x" target="_blank">crawling framework</a>.</p>
+
+<h3 id="solution-3">Solution 3</h3>
+
+<p>The optimal solution for weighted random should be the <a href="https://en.wikipedia.org/wiki/Alias_method" target="_blank">Alias Method</a>. It requires $O(n)$ time to initialize, $O(1)$ time to make a selection, and $O(n)$ memory. A golang version implementation is <a href="https://github.com/liuzl/alias" target="_blank">here</a>.</p>
+
+<h4 id="algorithm-vose-s-alias-method">Algorithm: Vose&rsquo;s Alias Method</h4>
+
+<h5 id="initialization">Initialization:</h5>
+
+<ol>
+<li>Create arrays $Alias$ and $Prob$, each of size $n$.</li>
+<li>Create two worklists, $Small$ and $Large$.</li>
+<li>Multiply each probability by $n$.</li>
+<li>For each scaled probability $p_i$:
+
+<ol>
+<li>If $p_i&lt;1$, add $i$ to $Small$.</li>
+<li>Otherwise $p_i \geqslant 1$, add $i$ to $Large$.</li>
+</ol></li>
+<li>While $Small$ and $Large$ are not empty: ($Large$ might be emptied first)
+
+<ol>
+<li>Remove the first element from $Small$; call it $l$.</li>
+<li>Remove the first element from $Large$; call it $g$.</li>
+<li>Set $Prob[l]=p_l$.</li>
+<li>Set $Alias[l]=g$.</li>
+<li>Set $p_g = p_g + p_l - 1$. (This is a more numerically stable option)</li>
+<li>If $p_g&lt;1$, add $g$ to $Small$.</li>
+<li>Otherwise $p_g \geqslant 1$, add $g$ to $Large$.</li>
+</ol></li>
+<li>While $Large$ is not empty:
+
+<ol>
+<li>Remove the first element from $Large$; call it $g$.</li>
+<li>Set $Prob[g] = 1$.</li>
+</ol></li>
+<li>While $Small$ is not empty: This is only possible due to numerical instability.
+
+<ol>
+<li>Remove the first element from $Small$; call it $l$.</li>
+<li>Set $Prob[l] = 1$.</li>
+</ol></li>
+</ol>
+
+<h5 id="generation">Generation:</h5>
+
+<ol>
+<li>Generate a fair die roll from an n-sided die; call the side $i$.</li>
+<li>Flip a biased coin that comes up heads with probability $Prob[i]$.</li>
+<li>If the coin comes up &ldquo;heads&rdquo;, return $i$.</li>
+<li>Otherwise, return $Alias[i]$.</li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ol>
+<li>Walker, A. J. 1977. &ldquo;An efficient method for generating discrete random variable with general distributions.&rdquo; <em>ACM Transactions on Mathematical Software</em> <strong>3</strong> 253–256.</li>
+<li>&ldquo;<a href="http://www.keithschwarz.com/darts-dice-coins/" target="_blank">Darts, Dice, and Coins: Sampling from a Discrete Distribution</a>&rdquo;. <em>Keith Schwarz</em>, December 29, 2011</li>
+<li><a href="https://en.wikipedia.org/wiki/Alias_method" target="_blank">Alias method</a>. <em>Wikipedia</em>, April 5, 2018</li>
+<li><a href="https://stackoverflow.com/questions/4463561/weighted-random-selection-from-array" target="_blank">Weighted random selection from array
+</a>, <em>stackoverflow</em>, Dec 16 2010</li>
+</ol>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/algorithm">algorithm</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/sampling">sampling</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/alias-method">alias method</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/weighted-random">weighted random</a>
+  
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+      
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+        
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

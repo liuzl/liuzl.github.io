@@ -324,13 +324,13 @@
 
 <h2 id="scenarios">Scenarios</h2>
 
-<p>There are lots of real world scenarios that need weighted random. Such as load balancers(like <a href="https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/" target="_blank">nginx</a>, haproxy etc). Following is an example configuration of nginx. In the example, <code>backend1.example.com</code> has weight <code>5</code>; the other two servers have the default weight <code>1</code>, With this configuration of weights, out of every seven requests, five are sent to <code>backend1.example.com</code> and one to <code>backend2.example.com</code> one to <code>backend3.example.com</code>.</p>
+<p>There are lots of real world scenarios that need weighted random. Such as load balancers(like <a href="https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/" target="_blank">nginx</a>, haproxy etc). Following is an example configuration of nginx. In the example, <code>backend1</code> has weight <code>5</code>; the other two servers have the default weight <code>1</code>, With this configuration of weights, out of every seven requests, five are sent to <code>backend1</code> and one to <code>backend2</code> one to <code>backend3</code>.</p>
 
 <pre><code class="language-nginx">http {
     upstream backend {
-        server backend1.example.com weight=5;
-        server backend2.example.com;
-        server backend3.example.com;
+        server backend1 weight=5;
+        server backend2;
+        server backend3;
     }
 }
 </code></pre>

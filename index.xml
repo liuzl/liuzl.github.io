@@ -24,13 +24,13 @@
 
 &lt;h2 id=&#34;scenarios&#34;&gt;Scenarios&lt;/h2&gt;
 
-&lt;p&gt;There are lots of real world scenarios that need weighted random. Such as load balancers(like &lt;a href=&#34;https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/&#34; target=&#34;_blank&#34;&gt;nginx&lt;/a&gt;, haproxy etc). Following is an example configuration of nginx. In the example, &lt;code&gt;backend1.example.com&lt;/code&gt; has weight &lt;code&gt;5&lt;/code&gt;; the other two servers have the default weight &lt;code&gt;1&lt;/code&gt;, With this configuration of weights, out of every seven requests, five are sent to &lt;code&gt;backend1.example.com&lt;/code&gt; and one to &lt;code&gt;backend2.example.com&lt;/code&gt; one to &lt;code&gt;backend3.example.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;There are lots of real world scenarios that need weighted random. Such as load balancers(like &lt;a href=&#34;https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/&#34; target=&#34;_blank&#34;&gt;nginx&lt;/a&gt;, haproxy etc). Following is an example configuration of nginx. In the example, &lt;code&gt;backend1&lt;/code&gt; has weight &lt;code&gt;5&lt;/code&gt;; the other two servers have the default weight &lt;code&gt;1&lt;/code&gt;, With this configuration of weights, out of every seven requests, five are sent to &lt;code&gt;backend1&lt;/code&gt; and one to &lt;code&gt;backend2&lt;/code&gt; one to &lt;code&gt;backend3&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-nginx&#34;&gt;http {
     upstream backend {
-        server backend1.example.com weight=5;
-        server backend2.example.com;
-        server backend3.example.com;
+        server backend1 weight=5;
+        server backend2;
+        server backend3;
     }
 }
 &lt;/code&gt;&lt;/pre&gt;

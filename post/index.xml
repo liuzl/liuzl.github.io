@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Gödel’s First Incompleteness Theorem for Programmers</title>
+      <link>/post/godels-first-incompleteness-theorem/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/post/godels-first-incompleteness-theorem/</guid>
+      <description>Gödel’s incompleteness theorems have been hailed as “the greatest mathematical discoveries of the 20th century” — indeed, the theorems apply not only to mathematics, but all formal systems and have deep implications for science, logic, computer science, philosophy, and so on. In this post, I’ll give a simple but rigorous sketch of Gödel’s First Incompleteness Theorem. Formally, it states that:
+ Any consistent formal system $S$ within which a “certain amount of elementary arithmetic” can be carried out is incomplete; i.</description>
+    </item>
+    
+    <item>
       <title>Weighted Random: algorithms for sampling from discrete probability distributions</title>
       <link>/post/weighted-random/</link>
       <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>

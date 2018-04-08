@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logic on Zhanliang Liu</title>
+    <link>/tags/logic/</link>
+    <description>Recent content in Logic on Zhanliang Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 08 Apr 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/logic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gödel’s First Incompleteness Theorem for Programmers</title>
+      <link>/post/godels-first-incompleteness-theorem/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/post/godels-first-incompleteness-theorem/</guid>
+      <description>Gödel’s incompleteness theorems have been hailed as “the greatest mathematical discoveries of the 20th century” — indeed, the theorems apply not only to mathematics, but all formal systems and have deep implications for science, logic, computer science, philosophy, and so on. In this post, I’ll give a simple but rigorous sketch of Gödel’s First Incompleteness Theorem. Formally, it states that:
+ Any consistent formal system $S$ within which a “certain amount of elementary arithmetic” can be carried out is incomplete; i.</description>
+    </item>
+    
+  </channel>
+</rss>

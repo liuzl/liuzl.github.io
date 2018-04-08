@@ -11,6 +11,313 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Gödel’s First Incompleteness Theorem for Programmers</title>
+      <link>/post/godels-first-incompleteness-theorem/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/post/godels-first-incompleteness-theorem/</guid>
+      <description>
+
+&lt;p&gt;Gödel’s incompleteness theorems have been hailed as “the greatest mathematical discoveries of the 20th century” — indeed, the theorems apply not only to mathematics, but all formal systems and have deep implications for science, logic, computer science, philosophy, and so on. In this post, I’ll give a simple but rigorous sketch of Gödel’s First Incompleteness Theorem. Formally, it states that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Any consistent formal system $S$ within which a “certain amount of elementary arithmetic” can be carried out is incomplete; i.e., there are statements of the language of $S$ which can neither be proved nor disproved in $S$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is a rigorous proof with a focus on software engineers and programmers. I based this post on this &lt;a href=&#34;https://www.youtube.com/watch?v=9JeIG_CsgvI&#34; target=&#34;_blank&#34;&gt;excellent lecture&lt;/a&gt; I found on YouTube a little while ago. When I first learned how to prove Gödel’s incompleteness theorems, it was in the context of a metalogic class that dealt with all kinds of confusing and deep topics like Henkin construction and transfinitary logic. But as it turns out, Gödel can be understood without much fanfare!&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;We start on this journey by defining a couple of things. First, we define $F$ as a function that takes a positive integer and returns either &lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;. Here’s an example of such an $F$:&lt;/p&gt;
+
+&lt;p&gt;$$
+isOdd(x)=\begin{cases}
+0 &amp;amp; x\text{ is even}\\
+1 &amp;amp; x\text{ is odd}
+\end{cases}
+$$&lt;/p&gt;
+
+&lt;p&gt;So, we see that $isOdd(2)=0$ or that $isOdd(38943981)=1$. We can define $F$ however we want — as long as the output will either be a &lt;code&gt;0&lt;/code&gt; or a &lt;code&gt;1&lt;/code&gt;. Let $Q$ be the set of all such functions $F$.&lt;/p&gt;
+
+&lt;p&gt;We say that $F$ is computable if there exists a computer program (or proof) $P$ that takes as input $x$ and returns $F(x)$. It goes without saying that $P$ must complete within finite time and must be correct. So let’s look at some code. Is $isOdd(x)$ computable?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function isOdd(x) {
+  return (x % 2);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Looks like it! This program will always return &lt;code&gt;0&lt;/code&gt; when $x$ is even and &lt;code&gt;1&lt;/code&gt; when $x$ is odd. What about a more complicated example:&lt;/p&gt;
+
+&lt;p&gt;$$
+isPrime(x)=\begin{cases}
+0 &amp;amp; x\text{ is not prime}\\
+1 &amp;amp; x\text{ is prime}
+\end{cases}
+$$&lt;/p&gt;
+
+&lt;p&gt;Is $isPrime$ computable?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function isPrime(x) {
+  if(x &amp;lt; 2) return 0;
+  if(x == 2) return 1;
+  for(var i = 2; i &amp;lt; x; i++) {
+    if(x % i === 0) return 0;
+  }
+  return 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Courtesy of this &lt;a href=&#34;https://stackoverflow.com/a/48356406/243613&#34; target=&#34;_blank&#34;&gt;Stack Overflow answer&lt;/a&gt;, it looks like it is. Let $A$ be the set of all computable functions in $Q$. We just found out (the hard way) that $isOdd$ and $isPrime$ are in $A$ — that is, they are computable.&lt;/p&gt;
+
+&lt;p&gt;But here’s the big question: are all functions in $Q$ computable? Or, equivalently:&lt;/p&gt;
+
+&lt;p&gt;$$
+A\stackrel{?}{=}Q
+$$&lt;/p&gt;
+
+&lt;p&gt;If $A=Q$, then Gödel was wrong, so we need to figure out a clever way to show that $A\subset Q$. In other words, we need to show that there are some functions that take positive integers $x$ as input and return either a &lt;code&gt;0&lt;/code&gt; or a &lt;code&gt;1&lt;/code&gt; that we simply &lt;strong&gt;cannot implement&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-set-up&#34;&gt;The Set-up&lt;/h2&gt;
+
+&lt;p&gt;So how do you show that some functions $F$ are not computable? Well, let’s do it the old-fashioned way. Since we’re already using JavaScript, let’s just print out every single JavaScript program. Ever. To make things easy, we can order them alphabetically and by length (in &lt;a href=&#34;https://en.wikipedia.org/wiki/Lexicographical_order&#34; target=&#34;_blank&#34;&gt;lexicographical order&lt;/a&gt;). To make things even easier, we can just throw out programs that loop infinitely or don’t return a &lt;code&gt;1&lt;/code&gt; or a &lt;code&gt;0&lt;/code&gt;. When all is said and done, we’re left with an infinite number of programs that probably start out like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function F1(x) {
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function F2(x) {
+  return 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And further down the line…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Fn(x) {
+  return 1 - 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And further down the line…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Fn(x) {
+  return x / x;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And further down the line…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Fn(x) {
+  return (x % 2); // hey, this is the isOdd function from before!
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And even further down the line…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Fn(x) {
+  return (x % 2) / 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And even further down the line…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function Fn(x) {
+  let someRandomVariable = x ^ x;
+  let abcd = someRandomVariable / y;
+  if (abdc &amp;gt; -12) return 0;
+  return 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You get the picture. Now we have every single possible program written in JavaScript that outputs &lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;. In other words, we just populated $A$: we now have a program that goes with every single computable function. Let’s put them in a big table called $T$. The column headings indicate inputs (positive integers) and the rows indicate computable functions (and, implicitly, the programs that implement them).&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;th&gt;5&lt;/th&gt;
+&lt;th&gt;6&lt;/th&gt;
+&lt;th&gt;7&lt;/th&gt;
+&lt;th&gt;&amp;hellip;&lt;/th&gt;
+&lt;th&gt;n&lt;/th&gt;
+&lt;th&gt;&amp;hellip;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$f_1$&lt;/td&gt;
+&lt;td&gt;$f_1(1)$&lt;/td&gt;
+&lt;td&gt;$f_1(2)$&lt;/td&gt;
+&lt;td&gt;$f_1(3)$&lt;/td&gt;
+&lt;td&gt;$f_1(4)$&lt;/td&gt;
+&lt;td&gt;$f_1(5)$&lt;/td&gt;
+&lt;td&gt;$f_1(6)$&lt;/td&gt;
+&lt;td&gt;$f_1(7)$&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;$f_1(n)$&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;$f_2$&lt;/td&gt;
+&lt;td&gt;$f_2(1)$&lt;/td&gt;
+&lt;td&gt;$f_2(2)$&lt;/td&gt;
+&lt;td&gt;$f_2(3)$&lt;/td&gt;
+&lt;td&gt;$f_2(4)$&lt;/td&gt;
+&lt;td&gt;$f_2(5)$&lt;/td&gt;
+&lt;td&gt;$f_2(6)$&lt;/td&gt;
+&lt;td&gt;$f_2(7)$&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;$f_2(n)$&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;$f_{o}$&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;$f_{o}(n)$&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;$f_{p}$&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;$f_{p}(n)$&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;$f_i$&lt;/td&gt;
+&lt;td&gt;$f_i(1)$&lt;/td&gt;
+&lt;td&gt;$f_i(2)$&lt;/td&gt;
+&lt;td&gt;$f_i(3)$&lt;/td&gt;
+&lt;td&gt;$f_i(4)$&lt;/td&gt;
+&lt;td&gt;$f_i(5)$&lt;/td&gt;
+&lt;td&gt;$f_i(6)$&lt;/td&gt;
+&lt;td&gt;$f_i(7)$&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;$f_i(n)$&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You’ll notice that $isOdd$ and $isPrime$ also made it in our table (as fo and fp, respectively). So far, so good. It seems that we thought of everything. But let’s define a new function:&lt;/p&gt;
+
+&lt;p&gt;$$
+\bar{f}(i)=1-f_i(i)
+$$&lt;/p&gt;
+
+&lt;p&gt;Where $f_i$ is the $i$th function in table $T$. First, let’s make sure we’re convinced that $\bar{f}$ is well-formed. The input $i$ is an integer. $f_{i}(i)$ will return either a &lt;code&gt;0&lt;/code&gt; or a &lt;code&gt;1&lt;/code&gt;, given that $f_i$ has a row populated in $T$. And finally, $1–0= 1$ or $1–1=0$, so both cases are well-formed.&lt;/p&gt;
+
+&lt;p&gt;$$
+\bar{f}(i)=\stackrel{\text{will return }0\text{ or }1}{\overbrace{1-\underset{\text{will return 0 or 1}}{\underbrace{f_{i}(i)}}}}
+$$&lt;/p&gt;
+
+&lt;p&gt;Therefore, $\bar{f}$ is in $Q$, but is it in $T$?&lt;/p&gt;
+
+&lt;h2 id=&#34;the-proof&#34;&gt;The Proof&lt;/h2&gt;
+
+&lt;p&gt;Seeing why $\bar{f}$ can’t be in $T$ is pretty straightforward. Suppose $\bar{f}$ is $f_2$. Like we’ve seen so far, $f_2(2)$ can either be &lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;. But if $f_2(2)=0$, then $\bar{f}(2)=1−f_2(2)=1−0=1$. So, we have:&lt;/p&gt;
+
+&lt;p&gt;$$
+f_2(2) \neq \bar{f}(2)
+$$&lt;/p&gt;
+
+&lt;p&gt;Whoops. Okay, so it wasn’t $f_2$. That would be too easy. What about $f_{421}$? If $f_{421}(421)=1$, then $\bar{f}(421)=1−f_{421}(421)=1−1=0$. So, we have:&lt;/p&gt;
+
+&lt;p&gt;$$
+f_{421}(421) \neq \bar{f}(421)
+$$&lt;/p&gt;
+
+&lt;p&gt;As it turns out, any computable function we pick out of $T$ (and implicitly $A$) will disagree with $\bar{f}$ at at least one output. And therefore, we have the amazing finding that:&lt;/p&gt;
+
+&lt;p&gt;$$
+A\subset Q
+$$&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In other words, there are some things, like $\bar{f}$, we can’t prove or disprove in formal systems. Given that we’ve been working with JavaScript in this post, it makes sense that it’s impossible to reference the program’s own lexicographic index in $T$. With that said, you might be tempted to think that there might be a way to “get around” this limitation; if your language was clever enough, perhaps. I’ll eventually write about Gödel’s Second Incompleteness Theorem, which drives the nail in the coffin: there’s no way to get around this.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Weighted Random: algorithms for sampling from discrete probability distributions</title>
       <link>/post/weighted-random/</link>
       <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
@@ -757,16 +1064,6 @@ git submodule update --init --recursive
       
       <guid>/publication/clothing-search/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Web Crawling at Scale</title>
-      <link>/project/web-crawling/</link>
-      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
-      
-      <guid>/project/web-crawling/</guid>
-      <description>&lt;p&gt;Web crawling is at the core of many data businesses. Whether you call it web crawling, web or screen scraping, or mining the web, it involves going to sites or json apis on the web, grabbing pages, and parsing them to pull out links, images, text, prices, titles, email addresses, and numerous other page attributes.&lt;/p&gt;
 </description>
     </item>
     

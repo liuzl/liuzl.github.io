@@ -22,15 +22,6 @@
     </item>
     
     <item>
-      <title>Ai</title>
-      <link>/tags/ai/</link>
-      <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
-      
-      <guid>/tags/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Algorithm</title>
       <link>/tags/algorithm/</link>
       <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
@@ -40,43 +31,25 @@
     </item>
     
     <item>
-      <title>Alias method</title>
-      <link>/tags/alias-method/</link>
-      <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
-      
-      <guid>/tags/alias-method/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chaos</title>
-      <link>/tags/chaos/</link>
-      <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
-      
-      <guid>/tags/chaos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chinese-translation</title>
-      <link>/tags/chinese-translation/</link>
+      <title>Chinese</title>
+      <link>/tags/chinese/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/chinese-translation/</guid>
+      <guid>/tags/chinese/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Crawling</title>
-      <link>/tags/crawling/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Crawler</title>
+      <link>/tags/crawler/</link>
+      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>/tags/crawling/</guid>
+      <guid>/tags/crawler/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Information extraction</title>
+      <title>Information Extraction</title>
       <link>/tags/information-extraction/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
@@ -85,43 +58,25 @@
     </item>
     
     <item>
-      <title>Information-integration</title>
-      <link>/tags/information-integration/</link>
-      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
+      <title>Logic</title>
+      <link>/tags/logic/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
       
-      <guid>/tags/information-integration/</guid>
+      <guid>/tags/logic/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Lemmatization</title>
-      <link>/tags/lemmatization/</link>
-      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      <title>Mathematics</title>
+      <link>/tags/mathematics/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
       
-      <guid>/tags/lemmatization/</guid>
+      <guid>/tags/mathematics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Sat, 11 Jul 2015 00:00:00 +0800</pubDate>
-      
-      <guid>/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Logistic map</title>
-      <link>/tags/logistic-map/</link>
-      <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
-      
-      <guid>/tags/logistic-map/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nlp</title>
+      <title>NLP</title>
       <link>/tags/nlp/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
@@ -130,7 +85,7 @@
     </item>
     
     <item>
-      <title>Nlu</title>
+      <title>NLU</title>
       <link>/tags/nlu/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
@@ -139,56 +94,29 @@
     </item>
     
     <item>
-      <title>Normalization</title>
-      <link>/tags/normalization/</link>
-      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      <title>Philosophy</title>
+      <link>/tags/philosophy/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
       
-      <guid>/tags/normalization/</guid>
+      <guid>/tags/philosophy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Opencc</title>
-      <link>/tags/opencc/</link>
-      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      <title>Programming</title>
+      <link>/tags/programming/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
       
-      <guid>/tags/opencc/</guid>
+      <guid>/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sampling</title>
-      <link>/tags/sampling/</link>
-      <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
-      
-      <guid>/tags/sampling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scraping</title>
-      <link>/tags/scraping/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/scraping/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Semantic parsing</title>
-      <link>/tags/semantic-parsing/</link>
+      <title>Semantic</title>
+      <link>/tags/semantic/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/semantic-parsing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Simplified-chinese</title>
-      <link>/tags/simplified-chinese/</link>
-      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/simplified-chinese/</guid>
+      <guid>/tags/semantic/</guid>
       <description></description>
     </item>
     
@@ -198,42 +126,6 @@
       <pubDate>Sat, 11 Jul 2015 00:00:00 +0800</pubDate>
       
       <guid>/tags/system/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tokenization</title>
-      <link>/tags/tokenization/</link>
-      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tokenization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Traditional-chinese</title>
-      <link>/tags/traditional-chinese/</link>
-      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/traditional-chinese/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web-crawling</title>
-      <link>/tags/web-crawling/</link>
-      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/web-crawling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Weighted random</title>
-      <link>/tags/weighted-random/</link>
-      <pubDate>Thu, 05 Apr 2018 00:00:00 +0800</pubDate>
-      
-      <guid>/tags/weighted-random/</guid>
       <description></description>
     </item>
     

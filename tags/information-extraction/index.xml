@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Information extraction on Zhanliang Liu</title>
+    <title>Information Extraction on Zhanliang Liu</title>
     <link>/tags/information-extraction/</link>
-    <description>Recent content in Information extraction on Zhanliang Liu</description>
+    <description>Recent content in Information Extraction on Zhanliang Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
@@ -13,12 +13,30 @@
     
     
     <item>
+      <title>Goobot: A general multilingual web article extractor</title>
+      <link>/project/goobot/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/project/goobot/</guid>
+      <description> 实现新闻网页标题、时间、正文、图片和视频的抽取 对全球多语种站点通用，高效稳定 代码开源：https://github.com/crawlerclub/ce 演示地址：http://goobot.org/  </description>
+    </item>
+    
+    <item>
       <title>Knowledge extraction from web pages</title>
       <link>/project/knowledge-extraction/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/project/knowledge-extraction/</guid>
       <description> 数据源  某搜索引擎网页库 Common Crawl Corpus  根据号码在网页中出现的位置采用相应的方法  meta标签、microdata：结构化数据抽取 网页头尾：基于规则的抽取系统 网页正文：  人工总结号码信息特征（HTML标签结构特征，文本特征等） 机器学习进行信息抽取和分类    </description>
+    </item>
+    
+    <item>
+      <title>Web Crawling at Scale</title>
+      <link>/project/web-crawling/</link>
+      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/project/web-crawling/</guid>
+      <description>Web crawling is at the core of many data businesses. Whether you call it web crawling, web or screen scraping, or mining the web, it involves going to sites or json apis on the web, grabbing pages, and parsing them to pull out links, images, text, prices, titles, email addresses, and numerous other page attributes.</description>
     </item>
     
   </channel>

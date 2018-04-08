@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chinese on Zhanliang Liu</title>
+    <link>/tags/chinese/</link>
+    <description>Recent content in Chinese on Zhanliang Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 16 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/chinese/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gocc: Golang version OpenCC 繁簡轉換</title>
+      <link>/project/gocc/</link>
+      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/gocc/</guid>
+      <description>Introduction 介紹 gocc is a golang port of OpenCC(Open Chinese Convert 開放中文轉換) which is a project for conversion between Traditional and Simplified Chinese developed by BYVoid.
+gocc stands for &amp;ldquo;Golang version OpenCC&amp;rdquo;, it is a total rewrite version of OpenCC by Go. It just borrows the dict files and config files of OpenCC, so it may not produce the same output with the original OpenCC.
+Installation 安裝 1, golang package go get github.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Zhanliang Liu</title>
+    <link>/tags/programming/</link>
+    <description>Recent content in Programming on Zhanliang Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 08 Apr 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gödel’s First Incompleteness Theorem for Programmers</title>
+      <link>/post/godels-first-incompleteness-theorem/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/post/godels-first-incompleteness-theorem/</guid>
+      <description>Gödel’s incompleteness theorems have been hailed as “the greatest mathematical discoveries of the 20th century” — indeed, the theorems apply not only to mathematics, but all formal systems and have deep implications for science, logic, computer science, philosophy, and so on. In this post, I’ll give a simple but rigorous sketch of Gödel’s First Incompleteness Theorem. Formally, it states that:
+ Any consistent formal system $S$ within which a “certain amount of elementary arithmetic” can be carried out is incomplete; i.</description>
+    </item>
+    
+    <item>
+      <title>Illustration of the logistic map</title>
+      <link>/post/logistic-map/</link>
+      <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
+      
+      <guid>/post/logistic-map/</guid>
+      <description>Illustration of the logistic map, $x_{n+1} = f(x_n) = r \cdot x_n \cdot (1 - x_n)$
+At $r_1=3$, a stable period $2^1=2$ orbit is born. At $r_2=3.449$ a stable period $2^2=4$ orbit is born. As $r$ continues to increase, the period doublings continue until $r_{\infty} \approx 3.56995$ after which chaotic dynamics begin to occur, interspersed with periodic windows.
+The Feigeinbaum constant $\delta=4.6692\dots$ is the ratio of subsequent differences between the values of $r_n$ at which the period doubles, as $n$ approaches infinity.</description>
+    </item>
+    
+  </channel>
+</rss>

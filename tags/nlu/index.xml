@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nlu on Zhanliang Liu</title>
+    <title>NLU on Zhanliang Liu</title>
     <link>/tags/nlu/</link>
-    <description>Recent content in Nlu on Zhanliang Liu</description>
+    <description>Recent content in NLU on Zhanliang Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
@@ -19,6 +19,16 @@
       
       <guid>/project/fmr/</guid>
       <description>Element types in FMR  Constants: Refer to specific objects in the world. A constant can be a number, a lexical string, or an entity. Classes: Semantic category of entities. For example: location.city, math.number  Sub-class: math.number ⊆ math.expression Template classes: classes with one or more parameters, for example: t.list&amp;lt;c, m, n&amp;gt;, where c is a class, m and n are integers.  Functions: The major way to form larger language units from smaller ones.</description>
+    </item>
+    
+    <item>
+      <title>ling: A Natural Language Processing toolkit in Golang</title>
+      <link>/project/ling/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/ling/</guid>
+      <description>other NLP tools  Stanford CoreNLP Java spaCy Python lingo Golang  Multilingual text toknization  Unicode Standard Annex #29 blevesearch segment  Text normalization  Text normalization in Go  Lemmatization  词干提取（stemming）和词形还原（lemmatization）
+  Stemming and lemmatization Lemmatization ListsDatasets by MBM  The UniMorph Project 中文繁简转换  gocc Golang version OpenCC OpenCC Chinese-Character Jian&amp;lt;=&amp;gt;Fan converting library in Go Traditional and Simplified Chinese Conversion in Go Han unification   Tagging  Regex tagger  commonregex, a collection of common regular expressions for Go.</description>
     </item>
     
   </channel>

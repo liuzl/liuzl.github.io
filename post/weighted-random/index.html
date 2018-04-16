@@ -84,7 +84,7 @@
   
   <meta property="article:published_time" content="2018-04-05T00:00:00&#43;08:00">
   
-  <meta property="article:modified_time" content="2018-04-06T00:00:00&#43;08:00">
+  <meta property="article:modified_time" content="2018-04-16T00:00:00&#43;08:00">
   
 
   
@@ -249,7 +249,7 @@
         Last updated on
     
     <time datetime="2018-04-05 00:00:00 &#43;0800 CST" itemprop="datePublished dateModified">
-      Apr 6, 2018
+      Apr 16, 2018
     </time>
   </span>
   <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
@@ -390,7 +390,7 @@ func main() {
 
 <h3 id="solution-2">Solution 2</h3>
 
-<p>The first solution takes too much memory, then came solution 2: Compute the discrete cumulative density function (CDF) of the list &ndash; or in simple terms the array of cumulative sums of the weights. Then generate a random number in the range between 0 and the sum of all weights, do a linear search to find this random number in your discrete CDF array and get the value corresponding to this entry &ndash; this is the weighted random number. Binary search could reduce the time complexity from $O(n)$ to $O(log(n))$.</p>
+<p>The first solution takes too much memory, then came solution 2: Compute the discrete cumulative density function (CDF) of the list &ndash; or in simple terms the array of cumulative sums of the weights. Then generate a random number in the range between 0 and the sum of all weights, do a linear search to find this random number in your discrete CDF array and get the value corresponding to this entry &ndash; this is the weighted random number.</p>
 
 <pre><code class="language-go">func WeightedRandomS2(weights []float32) int {
     if len(weights) == 0 {
@@ -414,6 +414,42 @@ func main() {
 <p>I used this solution in the scheduler of <a href="https://github.com/crawlerclub/x" target="_blank">crawling framework</a>.</p>
 
 <h3 id="solution-3">Solution 3</h3>
+
+<p>Adopting binary search over the CDF array could reduce the time complexity from $O(n)$ to $O(log(n))$.</p>
+
+<pre><code class="language-go">func WeightedRandomS3(weights []float32) int {
+    n := len(weights)
+    if n == 0 {
+        return 0
+    }
+    cdf := make([]float32, n)
+    var sum float32 = 0.0
+    for i, w := range weights {
+        if i &gt; 0 {
+            cdf[i] = cdf[i-1] + w
+        } else {
+            cdf[i] = w
+        }
+        sum += w
+    }
+    r := rand.Float32() * sum
+    var l, h int = 0, n - 1
+    for l &lt;= h {
+        m := l + (h-l)/2
+        if r &lt;= cdf[m] {
+            if m == 0 || (m &gt; 0 &amp;&amp; r &gt; cdf[m-1]) {
+                return m
+            }
+            h = m - 1
+        } else {
+            l = m + 1
+        }
+    }
+    return -1
+}
+</code></pre>
+
+<h3 id="solution-4">Solution 4</h3>
 
 <p>The optimal solution for weighted random should be the <a href="https://en.wikipedia.org/wiki/Alias_method" target="_blank">Alias Method</a>. It requires $O(n)$ time to initialize, $O(1)$ time to make a selection, and $O(n)$ memory. A golang version implementation is <a href="https://github.com/liuzl/alias" target="_blank">here</a>.</p>
 

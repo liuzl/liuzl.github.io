@@ -41,6 +41,15 @@
     
     <url>
     
+      <loc>/goutil/</loc>
+      <lastmod>2017-11-20T10:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/logistic-map/</loc>
       <lastmod>2017-06-16T00:00:00+08:00</lastmod>
     </url>
@@ -226,6 +235,16 @@
     
       <loc>/tags/chinese/</loc>
       <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/code/</loc>
+      <lastmod>2017-11-20T10:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/filestore/</loc>
+      <lastmod>2018-05-23T10:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/godels-first-incompleteness-theorem/</loc>
       <lastmod>2018-04-08T00:00:00+08:00</lastmod>
     </url>
@@ -244,7 +253,7 @@
     <url>
     
       <loc>/code/</loc>
-      <lastmod>2017-11-20T10:00:00+00:00</lastmod>
+      <lastmod>2018-05-23T10:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

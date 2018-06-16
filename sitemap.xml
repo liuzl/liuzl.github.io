@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/project/pullword/</loc>
+      <lastmod>2018-06-16T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/q/</loc>
       <lastmod>2018-06-07T10:00:00+00:00</lastmod>
     </url>
@@ -312,7 +321,7 @@
     <url>
     
       <loc>/tags/nlp/</loc>
-      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+      <lastmod>2018-06-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -322,7 +331,7 @@
     <url>
     
       <loc>/tags/nlu/</loc>
-      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+      <lastmod>2018-06-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -352,7 +361,7 @@
     <url>
     
       <loc>/project/</loc>
-      <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+      <lastmod>2018-06-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

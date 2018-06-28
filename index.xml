@@ -11,6 +11,32 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Filtered-Space Saving Top-K</title>
+      <link>/post/topk-in-stream/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/post/topk-in-stream/</guid>
+      <description>
+
+&lt;p&gt;Before diving into Filtered-Space Saving algorithm, we will talk about the Space-Saving algorithm first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of m elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented. If the element is not currently monitored it is always added to the list. If the maximumnumber of elements has been reached, the element with the lower estimate of possible occurences is dropped. The new element estimate error is set to the estimate of frequency of the dropped element. The new element frequency estimate equal to the error plus 1.&lt;/p&gt;
+
+&lt;p&gt;The Space-Saving algorithm will keep in the list all the elements that may have occurred at least the new estimate error value (or the last dropped element estimate) of times. This ensures that no false negatives are generated but allows for false positives. Elements with low frequencies that are observed in the end of the data stream have higher probabilities of being present in the list.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.l2f.inesc-id.pt/~fmmb/wiki/uploads/Work/dict.refd.pdf&#34; target=&#34;_blank&#34;&gt;Filtered-Space Saving&lt;/a&gt; (FSS), that uses a filtering approach to improve on Space-Saving is a data structure and algorithm combination useful for accurately estimating the top k most frequent values appearing in a stream while using a constant, minimal memory footprint. The obvious approach to computing top-k is to simply keep a table of values and their associated frequencies, which is not practical for streams.&lt;/p&gt;
+
+&lt;p&gt;Instead, FSS works by hashing incoming values into buckets, where each bucket has a collection of values already added. If the incoming element already exists at a given bucket, its frequency is incremented. If the element doesn’t exist, it will be added as long as a few certain configurable conditions are met.&lt;/p&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A. Metwally, D. Agrawal, A. Abbadi, &lt;a href=&#34;http://www.cse.ust.hk/~raywong/comp5331/References/EfficientComputationOfFrequentAndTop-kElementsInDataStreams.pdf&#34; target=&#34;_blank&#34;&gt;Efficient Computation of Frequent and Top-k Elements in Data Streams&lt;/a&gt;, &lt;em&gt;Technical Report 2005-23, University of
+California, Santa Barbara&lt;/em&gt;, 2005.&lt;/li&gt;
+&lt;li&gt;Homem, Nuno, and J. P. Carvalho. &lt;a href=&#34;http://www.l2f.inesc-id.pt/~fmmb/wiki/uploads/Work/dict.refd.pdf&#34; target=&#34;_blank&#34;&gt;Finding top-k elements in data streams&lt;/a&gt;, &lt;em&gt;Elsevier Science Inc.&lt;/em&gt;, 2010.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>pullword: Unsupervised Word Discovery</title>
       <link>/project/pullword/</link>
       <pubDate>Sat, 16 Jun 2018 00:00:00 +0000</pubDate>
@@ -892,35 +918,6 @@ y_list = run_simulation(R=4, x_0=0.70001, num_steps=50)
 &lt;li&gt;对全球多语种站点通用，高效稳定&lt;/li&gt;
 &lt;li&gt;代码开源：&lt;a href=&#34;https://github.com/crawlerclub/ce&#34; target=&#34;_blank&#34;&gt;https://github.com/crawlerclub/ce&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;演示地址：&lt;a href=&#34;http://goobot.org/&#34; target=&#34;_blank&#34;&gt;http://goobot.org/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Knowledge extraction from web pages</title>
-      <link>/project/knowledge-extraction/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/project/knowledge-extraction/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;数据源
-
-&lt;ul&gt;
-&lt;li&gt;某搜索引擎网页库&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://commoncrawl.org/&#34; target=&#34;_blank&#34;&gt;Common Crawl Corpus&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;根据号码在网页中出现的位置采用相应的方法
-
-&lt;ul&gt;
-&lt;li&gt;meta标签、microdata：结构化数据抽取&lt;/li&gt;
-&lt;li&gt;网页头尾：基于规则的抽取系统&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;网页正文&lt;/strong&gt;：
-
-&lt;ul&gt;
-&lt;li&gt;人工总结号码信息特征（HTML标签结构特征，文本特征等）&lt;/li&gt;
-&lt;li&gt;机器学习进行信息抽取和分类&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

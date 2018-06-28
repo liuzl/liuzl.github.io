@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Filtered-Space Saving Top-K</title>
+      <link>/post/topk-in-stream/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/post/topk-in-stream/</guid>
+      <description>Before diving into Filtered-Space Saving algorithm, we will talk about the Space-Saving algorithm first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of m elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented.</description>
+    </item>
+    
+    <item>
       <title>Gödel’s First Incompleteness Theorem for Programmers</title>
       <link>/post/godels-first-incompleteness-theorem/</link>
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>

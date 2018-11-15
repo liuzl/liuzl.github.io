@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Semantic on Zhanliang Liu</title>
-    <link>/tags/semantic/</link>
-    <description>Recent content in Semantic on Zhanliang Liu</description>
+    <title>Meaning on Zhanliang Liu</title>
+    <link>/tags/meaning/</link>
+    <description>Recent content in Meaning on Zhanliang Liu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Thu, 15 Nov 2018 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="/tags/semantic/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/meaning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,15 +22,6 @@
 🏎 A crash course on Lexical Meaning &amp;amp; Semantics If you already know what we mean by “Meaning/Semantics” in NLP, you can skip this part and go straight to the debate 🔥.
 For the CS/ML folks out there here are a few words of introduction.
 First, it’s important to state that Meaning in Natural Language is a multi-facetted concept with semantic, pragmatic, cognitive and social aspects.</description>
-    </item>
-    
-    <item>
-      <title>FMR: functional meaning representation</title>
-      <link>/project/fmr/</link>
-      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/project/fmr/</guid>
-      <description>Element types in FMR  Constants: Refer to specific objects in the world. A constant can be a number, a lexical string, or an entity. Classes: Semantic category of entities. For example: location.city, math.number  Sub-class: math.number ⊆ math.expression Template classes: classes with one or more parameters, for example: t.list&amp;lt;c, m, n&amp;gt;, where c is a class, m and n are integers.  Functions: The major way to form larger language units from smaller ones.</description>
     </item>
     
   </channel>

@@ -13,6 +13,18 @@
     
     
     <item>
+      <title>⛵ Learning Meaning in Natural Language Processing — The Semantics Mega-Thread</title>
+      <link>/post/semantic-meaning/</link>
+      <pubDate>Thu, 15 Nov 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/post/semantic-meaning/</guid>
+      <description>Last week a tweet by Jacob Andreas triggered a huge discussion on Twitter that many people have called the meaning/semantics mega-thread.
+🏎 A crash course on Lexical Meaning &amp;amp; Semantics If you already know what we mean by “Meaning/Semantics” in NLP, you can skip this part and go straight to the debate 🔥.
+For the CS/ML folks out there here are a few words of introduction.
+First, it’s important to state that Meaning in Natural Language is a multi-facetted concept with semantic, pragmatic, cognitive and social aspects.</description>
+    </item>
+    
+    <item>
       <title>Filtered-Space Saving Top-K</title>
       <link>/post/topk-in-stream/</link>
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0800</pubDate>

@@ -17,10 +17,9 @@
       
     
   
-  <meta name="description" content="Last week a tweet by Jacob Andreas triggered a huge discussion on Twitter that many people have called the meaning/semantics mega-thread.
-🏎 A crash course on Lexical Meaning &amp; Semantics If you already know what we mean by “Meaning/Semantics” in NLP, you can skip this part and go straight to the debate 🔥.
-For the CS/ML folks out there here are a few words of introduction.
-First, it’s important to state that Meaning in Natural Language is a multi-facetted concept with semantic, pragmatic, cognitive and social aspects.">
+  <meta name="description" content="I found a very worthwhile article while surfing medium.com days ago. The article is a summary of a twitter thread which talked about meaning, semantics, language models, learning Thai and Java, entailment, co-reference — all in one fascinating thread. The original article is here.
+Following is a copy of the original article:
+Last week a tweet by Jacob Andreas triggered a huge discussion on Twitter that many people have called the meaning/semantics mega-thread.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/semantic-meaning/">
@@ -99,10 +98,9 @@ First, it’s important to state that Meaning in Natural Language is a multi-fac
   <meta property="og:site_name" content="Zhanliang Liu">
   <meta property="og:url" content="/post/semantic-meaning/">
   <meta property="og:title" content="⛵ Learning Meaning in Natural Language Processing — The Semantics Mega-Thread | Zhanliang Liu">
-  <meta property="og:description" content="Last week a tweet by Jacob Andreas triggered a huge discussion on Twitter that many people have called the meaning/semantics mega-thread.
-🏎 A crash course on Lexical Meaning &amp; Semantics If you already know what we mean by “Meaning/Semantics” in NLP, you can skip this part and go straight to the debate 🔥.
-For the CS/ML folks out there here are a few words of introduction.
-First, it’s important to state that Meaning in Natural Language is a multi-facetted concept with semantic, pragmatic, cognitive and social aspects.">
+  <meta property="og:description" content="I found a very worthwhile article while surfing medium.com days ago. The article is a summary of a twitter thread which talked about meaning, semantics, language models, learning Thai and Java, entailment, co-reference — all in one fascinating thread. The original article is here.
+Following is a copy of the original article:
+Last week a tweet by Jacob Andreas triggered a huge discussion on Twitter that many people have called the meaning/semantics mega-thread.">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2018-11-15T00:00:00&#43;08:00">
@@ -271,7 +269,7 @@ First, it’s important to state that Meaning in Natural Language is a multi-fac
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    7 min read
+    8 min read
   </span>
   
 
@@ -330,6 +328,10 @@ First, it’s important to state that Meaning in Natural Language is a multi-fac
     <div class="article-style" itemprop="articleBody">
       
 
+<p>I found a very worthwhile article while surfing medium.com days ago. The article is a summary of a twitter thread which talked about meaning, semantics, language models, learning Thai and Java, entailment, co-reference — all in one fascinating thread. The original article is <a href="https://medium.com/huggingface/learning-meaning-in-natural-language-processing-the-semantics-mega-thread-9c0332dfe28e" target="_blank">here</a>.</p>
+
+<p>Following is a copy of the original article:</p>
+
 <p>Last week <a href="https://twitter.com/jacobandreas/status/1023246560082063366" target="_blank">a tweet by Jacob Andreas</a> triggered a huge discussion on Twitter that many people have called the <em>meaning/semantics mega-thread</em>.</p>
 
 <h2 id="a-crash-course-on-lexical-meaning-semantics">🏎 A crash course on Lexical Meaning &amp; Semantics</h2>
@@ -350,11 +352,10 @@ First, it’s important to state that Meaning in Natural Language is a multi-fac
 
 <p>One reason is that the field of NLP/NLU aims at <strong>building systems</strong> that understand what you say to them, trigger actions based on that and convey back meaningful information. Let’s take a simple example:</p>
 
-<ul>
-<li>Context: Knowledge of mathematics</li>
-<li>Utterance: <em>What is the largest prime less than 10?</em></li>
-<li>Action: <code>7</code></li>
-</ul>
+<pre><code>Context: Knowledge of mathematics
+Utterance: What is the largest prime less than 10?
+Action: 7
+</code></pre>
 
 <p>Given some knowledge of math, we want our NLU system to produce an appropriate answer.</p>
 
@@ -362,8 +363,9 @@ First, it’s important to state that Meaning in Natural Language is a multi-fac
 
 <p>For example in our case:</p>
 
-<pre><code>Meaning representation: 𝑚𝑎𝑥(𝚙𝚛𝚒𝚖𝚎𝚜 ∩(−∞; 𝟣𝟢))
-</code></pre>
+<p>$$
+Meaning Representation = max(primes \cap (-\infty, 10))
+$$</p>
 
 <p>We can then execute this expression with respect to a model of the world, like our database of knowledge, to get an answer. This way, we have also factored out the understanding of language (called <em>semantic parsing</em>) from the world knowledge (the problem of grounding meaning of in the real word).</p>
 
@@ -480,7 +482,7 @@ First, it’s important to state that Meaning in Natural Language is a multi-fac
 
 <p>Searle’s argument was made in the Strong versus Weak AI debate: does the computer has a mind or consciousness. Here the question is less philosophical: can we extract a representation of meaning from form alone.</p>
 
-<p>Still, <a href="https://twitter.com/jeremyphoward/status/1026881686359822337" target="_blank">as Jeremy Howard detailed a bit later</a>, the Chinese room experiment of Searle goes far beyond the question of Strong/weak AI to the question of understanding/qualia, so please go <a href="https://twitter.com/jeremyphoward/status/1026881686359822337" target="_blank">check this thread</a>.</p>
+<p>Still, <a href="https://twitter.com/jeremyphoward/status/1026881686359822337" target="_blank">as Jeremy Howard detailed a bit later</a>, the Chinese room experiment of Searle goes far beyond the question of strong/weak AI to the question of understanding/qualia, so please go <a href="https://twitter.com/jeremyphoward/status/1026881686359822337" target="_blank">check this thread</a>.</p>
 
     </div>
 

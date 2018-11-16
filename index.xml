@@ -18,6 +18,10 @@
       <guid>/post/semantic-meaning/</guid>
       <description>
 
+&lt;p&gt;I found a very worthwhile article while surfing medium.com days ago. The article is a summary of a twitter thread which talked about meaning, semantics, language models, learning Thai and Java, entailment, co-reference — all in one fascinating thread. The original article is &lt;a href=&#34;https://medium.com/huggingface/learning-meaning-in-natural-language-processing-the-semantics-mega-thread-9c0332dfe28e&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Following is a copy of the original article:&lt;/p&gt;
+
 &lt;p&gt;Last week &lt;a href=&#34;https://twitter.com/jacobandreas/status/1023246560082063366&#34; target=&#34;_blank&#34;&gt;a tweet by Jacob Andreas&lt;/a&gt; triggered a huge discussion on Twitter that many people have called the &lt;em&gt;meaning/semantics mega-thread&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;a-crash-course-on-lexical-meaning-semantics&#34;&gt;🏎 A crash course on Lexical Meaning &amp;amp; Semantics&lt;/h2&gt;
@@ -38,11 +42,10 @@
 
 &lt;p&gt;One reason is that the field of NLP/NLU aims at &lt;strong&gt;building systems&lt;/strong&gt; that understand what you say to them, trigger actions based on that and convey back meaningful information. Let’s take a simple example:&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Context: Knowledge of mathematics&lt;/li&gt;
-&lt;li&gt;Utterance: &lt;em&gt;What is the largest prime less than 10?&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Action: &lt;code&gt;7&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;Context: Knowledge of mathematics
+Utterance: What is the largest prime less than 10?
+Action: 7
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Given some knowledge of math, we want our NLU system to produce an appropriate answer.&lt;/p&gt;
 
@@ -50,8 +53,9 @@
 
 &lt;p&gt;For example in our case:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Meaning representation: 𝑚𝑎𝑥(𝚙𝚛𝚒𝚖𝚎𝚜 ∩(−∞; 𝟣𝟢))
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$$
+Meaning Representation = max(primes \cap (-\infty, 10))
+$$&lt;/p&gt;
 
 &lt;p&gt;We can then execute this expression with respect to a model of the world, like our database of knowledge, to get an answer. This way, we have also factored out the understanding of language (called &lt;em&gt;semantic parsing&lt;/em&gt;) from the world knowledge (the problem of grounding meaning of in the real word).&lt;/p&gt;
 
@@ -168,7 +172,7 @@
 
 &lt;p&gt;Searle’s argument was made in the Strong versus Weak AI debate: does the computer has a mind or consciousness. Here the question is less philosophical: can we extract a representation of meaning from form alone.&lt;/p&gt;
 
-&lt;p&gt;Still, &lt;a href=&#34;https://twitter.com/jeremyphoward/status/1026881686359822337&#34; target=&#34;_blank&#34;&gt;as Jeremy Howard detailed a bit later&lt;/a&gt;, the Chinese room experiment of Searle goes far beyond the question of Strong/weak AI to the question of understanding/qualia, so please go &lt;a href=&#34;https://twitter.com/jeremyphoward/status/1026881686359822337&#34; target=&#34;_blank&#34;&gt;check this thread&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Still, &lt;a href=&#34;https://twitter.com/jeremyphoward/status/1026881686359822337&#34; target=&#34;_blank&#34;&gt;as Jeremy Howard detailed a bit later&lt;/a&gt;, the Chinese room experiment of Searle goes far beyond the question of strong/weak AI to the question of understanding/qualia, so please go &lt;a href=&#34;https://twitter.com/jeremyphoward/status/1026881686359822337&#34; target=&#34;_blank&#34;&gt;check this thread&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

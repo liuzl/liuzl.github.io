@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>ds</title>
+      <link>/ds/</link>
+      <pubDate>Sat, 20 Jul 2019 10:00:00 +0000</pubDate>
+      
+      <guid>/ds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>⛵ Learning Meaning in Natural Language Processing — The Semantics Mega-Thread</title>
       <link>/post/semantic-meaning/</link>
       <pubDate>Thu, 15 Nov 2018 00:00:00 +0800</pubDate>
@@ -1061,15 +1070,6 @@ y_list = run_simulation(R=4, x_0=0.70001, num_steps=50)
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
       
       <guid>/talk/ai-sif100/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>大数据的“能”与“不能”</title>
-      <link>/talk/bigdata-ether-n5/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-      
-      <guid>/talk/bigdata-ether-n5/</guid>
       <description></description>
     </item>
     

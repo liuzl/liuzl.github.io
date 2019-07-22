@@ -17,7 +17,7 @@
       
     
   
-  <meta name="description" content="Before diving into Filtered-Space Saving algorithm, we will talk about the Space-Saving algorithm first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of m elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented.">
+  <meta name="description" content="Before diving into Filtered-Space Saving algorithm, let us talk about the Space-Saving algorithm first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of m elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/topk-in-stream/">
@@ -96,7 +96,7 @@
   <meta property="og:site_name" content="Zhanliang Liu">
   <meta property="og:url" content="/post/topk-in-stream/">
   <meta property="og:title" content="Filtered-Space Saving Top-K | Zhanliang Liu">
-  <meta property="og:description" content="Before diving into Filtered-Space Saving algorithm, we will talk about the Space-Saving algorithm first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of m elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented.">
+  <meta property="og:description" content="Before diving into Filtered-Space Saving algorithm, let us talk about the Space-Saving algorithm first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of m elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented.">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2018-06-25T00:00:00&#43;08:00">
@@ -324,7 +324,7 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>Before diving into Filtered-Space Saving algorithm, we will talk about the Space-Saving algorithm first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of m elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented. If the element is not currently monitored it is always added to the list. If the maximumnumber of elements has been reached, the element with the lower estimate of possible occurences is dropped. The new element estimate error is set to the estimate of frequency of the dropped element. The new element frequency estimate equal to the error plus 1.</p>
+<p>Before diving into <strong>Filtered-Space Saving algorithm</strong>, let us talk about the <strong>Space-Saving algorithm</strong> first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of <code>m</code> elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented. If the element is not currently monitored it is always added to the list. If the maximum number of elements has been reached, the element with the lower estimate of possible occurences is dropped. The new element estimate error is set to the estimate of frequency of the dropped element. The new element frequency estimate equal to the error plus <code>1</code>.</p>
 
 <p>The Space-Saving algorithm will keep in the list all the elements that may have occurred at least the new estimate error value (or the last dropped element estimate) of times. This ensures that no false negatives are generated but allows for false positives. Elements with low frequencies that are observed in the end of the data stream have higher probabilities of being present in the list.</p>
 

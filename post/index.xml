@@ -29,7 +29,7 @@ Last week a tweet by Jacob Andreas triggered a huge discussion on Twitter that m
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0800</pubDate>
       
       <guid>/post/topk-in-stream/</guid>
-      <description>Before diving into Filtered-Space Saving algorithm, we will talk about the Space-Saving algorithm first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of m elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented.</description>
+      <description>Before diving into Filtered-Space Saving algorithm, let us talk about the Space-Saving algorithm first, it was proposed by Metwally et al. in [1]. Space-Saving underlying idea is to monitor only a pre-defined number of m elements and their associated counters. Counters on each element are updated to reflect the maximum possible number of times an element has been observed and the error that might be involved in that estimate. If an element that is already being monitored occurs again, the counter for the frequency estimate is incremented.</description>
     </item>
     
     <item>

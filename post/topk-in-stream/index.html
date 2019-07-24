@@ -101,7 +101,7 @@
   
   <meta property="article:published_time" content="2018-06-25T00:00:00&#43;08:00">
   
-  <meta property="article:modified_time" content="2018-06-25T00:00:00&#43;08:00">
+  <meta property="article:modified_time" content="2019-07-23T00:00:00&#43;08:00">
   
 
   
@@ -254,8 +254,10 @@
 
   <span class="article-date">
     
+        Last updated on
+    
     <time datetime="2018-06-25 00:00:00 &#43;0800 CST" itemprop="datePublished dateModified">
-      Jun 25, 2018
+      Jul 23, 2019
     </time>
   </span>
   <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
@@ -331,6 +333,8 @@
 <p><a href="http://www.l2f.inesc-id.pt/~fmmb/wiki/uploads/Work/dict.refd.pdf" target="_blank">Filtered-Space Saving</a> (FSS), that uses a filtering approach to improve on Space-Saving is a data structure and algorithm combination useful for accurately estimating the top k most frequent values appearing in a stream while using a constant, minimal memory footprint. The obvious approach to computing top-k is to simply keep a table of values and their associated frequencies, which is not practical for streams.</p>
 
 <p>Instead, FSS works by hashing incoming values into buckets, where each bucket has a collection of values already added. If the incoming element already exists at a given bucket, its frequency is incremented. If the element doesn’t exist, it will be added as long as a few certain configurable conditions are met.</p>
+
+<p>A golang version implementation of FSS is <a href="https://github.com/liuzl/topk" target="_blank">here</a>.</p>
 
 <h2 id="references">References</h2>
 

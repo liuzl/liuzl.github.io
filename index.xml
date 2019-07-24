@@ -201,6 +201,8 @@ $$&lt;/p&gt;
 
 &lt;p&gt;Instead, FSS works by hashing incoming values into buckets, where each bucket has a collection of values already added. If the incoming element already exists at a given bucket, its frequency is incremented. If the element doesn’t exist, it will be added as long as a few certain configurable conditions are met.&lt;/p&gt;
 
+&lt;p&gt;A golang version implementation of FSS is &lt;a href=&#34;https://github.com/liuzl/topk&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
 &lt;ol&gt;

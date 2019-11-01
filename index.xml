@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>语义解析在智能搜索及AI行业落地等方向的应用</title>
+      <link>/talk/ccir2019/</link>
+      <pubDate>Sun, 22 Sep 2019 00:00:00 +0800</pubDate>
+      
+      <guid>/talk/ccir2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ds</title>
       <link>/ds/</link>
       <pubDate>Sat, 20 Jul 2019 10:00:00 +0000</pubDate>
@@ -1063,15 +1072,6 @@ y_list = run_simulation(R=4, x_0=0.70001, num_steps=50)
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
       
       <guid>/talk/bigdata-cufe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>人工智能的过去、现在和未来</title>
-      <link>/talk/ai-sif100/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-      
-      <guid>/talk/ai-sif100/</guid>
       <description></description>
     </item>
     

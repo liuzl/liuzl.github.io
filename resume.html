@@ -4,7 +4,7 @@
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 <title>resume</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
@@ -22,7 +22,7 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
   .CodeMirror-sizer { margin-left: 0px !important; }
   .CodeMirror-gutters { display: none !important; }
 }
-#write li > figure:first-child { margin-top: -20px; }
+#write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
 img { max-width: 100%; vertical-align: middle; }
 button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
@@ -30,6 +30,7 @@ input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px;
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
 h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
 p { orphans: 4; }
 h1 { font-size: 2rem; }
@@ -52,6 +53,7 @@ thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
 .CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -80,13 +82,12 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print { 
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
   html.blink-to-pdf { font-size: 13px; }
-  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
   .typora-export #write::after { height: 0px; }
-  @page { margin: 20mm 0px; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
@@ -137,15 +138,19 @@ a.md-print-anchor { white-space: pre !important; border: none !important; displa
 .MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
 .MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
 .MathJax_SVG * { transition: none; }
-.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
-[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
 table tr th { border-bottom-width: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
 iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 
 
 :root {
@@ -312,13 +317,11 @@ table tr th {
     font-weight: bold;
     border: 1px solid #dfe2e5;
     border-bottom: 0;
-    text-align: left;
     margin: 0;
     padding: 6px 13px;
 }
 table tr td {
     border: 1px solid #dfe2e5;
-    text-align: left;
     margin: 0;
     padding: 6px 13px;
 }
@@ -488,10 +491,19 @@ header, .context-menu, .megamenu-content, footer{
     border-color: #e5e5e5;
 }
 
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
  .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
 </style>
 </head>
 <body class='typora-export' >
-<div  id='write'  class = 'is-mac'><h2><a name='header-n0' class='md-header-anchor '></a>刘占亮</h2><h3><a name='header-n2' class='md-header-anchor '></a>联系方式</h3><ul><li><a href='mailto:zhanliangliu@gmail.com' target='_blank' class='url'>zhanliangliu@gmail.com</a></li><li><a href='https://zliu.org' target='_blank' class='url'>https://zliu.org</a></li></ul><h3><a name='header-n8' class='md-header-anchor '></a>教育背景</h3><ul><li>2005-2007 天津大学计算机应用技术 硕士</li><li>2001-2005 天津大学计算机科学与技术 本科</li></ul><h3><a name='header-n14' class='md-header-anchor '></a>工作经历</h3><ul><li>2015.10-2018.08 百度 国际化 资深架构师/高级技术经理</li><li>2014.01-2015.10 搜狗 号码通 资深研究员/研发负责人</li><li>2008.09-2014.01 腾讯 搜索 研究员</li><li>2007.06-2008.09 微软亚洲研究院 互联网搜索与挖掘组 RSDE</li></ul><h3><a name='header-n24' class='md-header-anchor '></a>工作职责</h3><ul><li>百度：基础研究/产品研发/技术管理/商业循环</li><li>腾讯/搜狗：基础研究/产品研发/研发管理</li><li>微软：基础研究</li></ul><h3><a name='header-n32' class='md-header-anchor '></a>主要技术方向</h3><ul><li>深度学习，自然语言处理</li><li>数据挖掘，知识挖掘</li><li>信息检索，互联网搜索，推荐系统</li><li>互联网信息采集，数据集成</li><li>分布式系统，高性能服务</li></ul><p>&nbsp;</p></div>
+<div  id='write'  class = 'is-mac'><h1><a name="刘占亮" class="md-header-anchor"></a><span>刘占亮</span></h1><h2><a name="联系方式" class="md-header-anchor"></a><span>联系方式</span></h2><ul><li><span>邮箱：</span><a href='mailto:liang@zliu.org' target='_blank' class='url'>liang@zliu.org</a><span>/</span><a href='mailto:zhanliangliu@qq.com' target='_blank' class='url'>zhanliangliu@qq.com</a></li><li><span>Github：</span><a href='https://github.com/liuzl'><span>https://github.com/liuzl</span></a></li><li><span>主页：</span><a href='https://zliu.org'><span>https://zliu.org</span></a></li></ul><h2><a name="教育背景" class="md-header-anchor"></a><span>教育背景</span></h2><ul><li><span>天津大学，计算机应用技术，硕士学位，2005~2007</span></li><li><span>天津大学，计算机科学与技术，学士学位，2001~2005</span></li></ul><h2><a name="工作经历" class="md-header-anchor"></a><span>工作经历</span></h2><ul><li><span>合伙人/技术副总裁，一览群智，2019.04~</span></li><li><span>合伙人/技术顾问，印信科技，2018.08~</span></li><li><span>资深架构师/技术团队负责人，百度国际化产品部，2015.10~2018.08</span></li><li><span>资深研究员/研发团队负责人，搜狗号码通业务部，2014.01~2015.10</span></li><li><span>研究员，腾讯搜索业务，2008.09~2014.01</span></li><li><span>RSDE，微软亚洲研究院，互联网搜索与挖掘组，2007.06~2008.09  </span></li></ul><h2><a name="工作职责" class="md-header-anchor"></a><span>工作职责</span></h2><ul><li><span>百度：基础研究/产品研发/研发管理/业务推广/商业变现</span></li><li><span>腾讯/搜狗：基础研究/产品研发/研发管理</span></li><li><span>微软：基础研究</span></li></ul><h2><a name="主要技术方向" class="md-header-anchor"></a><span>主要技术方向</span></h2><ul><li><span>深度学习，自然语言处理</span></li><li><span>数据挖掘，知识挖掘</span></li><li><span>信息检索，互联网搜索，推荐系统</span></li><li><span>互联网信息采集，数据集成</span></li><li><span>分布式系统，高性能服务</span></li></ul><h2><a name="主要产品经历" class="md-header-anchor"></a><span>主要产品经历</span></h2><ul><li><p><span>社区论坛类产品（2008-2010，腾讯）</span></p><ul><li><span>搜吧（</span><em><span>类百度贴吧</span></em><span>）</span></li></ul></li><li><p><span>搜索推荐类产品（2007-2012，微软、腾讯）</span></p><ul><li><span>网页搜索，垂直搜索，音乐推荐</span></li><li><span>数据挖掘平台</span></li><li><span>Query分析系统</span></li></ul></li><li><p><span>QQ生态产品（2010-2012，腾讯）</span></p><ul><li><span>QQ聊天助手热词搜索提示</span></li><li><span>个性签名搜索、表情搜索</span></li></ul></li><li><p><span>智能对话助手类产品（2012-2015，腾讯、搜狗）</span></p><ul><li><span>腾讯语音助手，搜狗语音助手</span></li><li><span>智能对话平台</span></li></ul></li><li><p><span>服务工具类移动端产品（2013-2018，腾讯、搜狗、百度）</span></p><ul><li><span>微信电话本/QQ手机管家，搜狗号码通，DU Caller</span></li></ul></li><li><p><span>内容型移动端产品（2015-2018，百度）</span></p><ul><li><span>DU Tube，MusicGo，DU News</span></li></ul></li><li><p><span>变现型产品（2016-2018，百度）</span></p><ul><li><span>CallerSDK，NewsSDK</span></li></ul></li></ul><h2><a name="开源项目" class="md-header-anchor"></a><span>开源项目</span></h2><ul><li><span>自然语言语义解析框架，</span><a href='https://github.com/liuzl/fmr'><span>https://github.com/liuzl/fmr</span></a></li><li><span>通用爬虫系统，</span><a href='https://github.com/crawlerclub/crawler'><span>https://github.com/crawlerclub/crawler</span></a></li><li><span>Golang版OpenCC，繁簡轉換，</span><a href='https://github.com/liuzl/gocc'><span>https://github.com/liuzl/gocc</span></a></li><li><span>多语种NLP基础框架，</span><a href='https://github.com/liuzl/ling'><span>https://github.com/liuzl/ling</span></a></li><li><em><span>更多项目请参见个人Github主页：</span><a href='https://github.com/liuzl'><span>https://github.com/liuzl</span></a></em></li></ul><p>&nbsp;</p></div>
 </body>
 </html>

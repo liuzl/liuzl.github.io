@@ -11,6 +11,15 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>从AI到IA，知识图谱信息抽取在智能审单业务中的应用实践</title>
+      <link>/talk/aiprocon2020/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>/talk/aiprocon2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>自然语言处理与行业应用</title>
       <link>/talk/waidc2019/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0800</pubDate>
@@ -1009,69 +1018,6 @@ y_list = run_simulation(R=4, x_0=0.70001, num_steps=50)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/logistic_map_3_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ling: A Natural Language Processing toolkit in Golang</title>
-      <link>/project/ling/</link>
-      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/project/ling/</guid>
-      <description>
-
-&lt;h2 id=&#34;other-nlp-tools&#34;&gt;other NLP tools&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://stanfordnlp.github.io/CoreNLP/index.html&#34; target=&#34;_blank&#34;&gt;Stanford CoreNLP&lt;/a&gt; Java&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://spacy.io/&#34; target=&#34;_blank&#34;&gt;spaCy&lt;/a&gt; Python&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/chewxy/lingo&#34; target=&#34;_blank&#34;&gt;lingo&lt;/a&gt; Golang&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;multilingual-text-toknization&#34;&gt;Multilingual text toknization&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.unicode.org/reports/tr29/&#34; target=&#34;_blank&#34;&gt;Unicode Standard Annex #29&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/liuzl/segment&#34; target=&#34;_blank&#34;&gt;blevesearch segment&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;text-normalization&#34;&gt;Text normalization&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.golang.org/normalization&#34; target=&#34;_blank&#34;&gt;Text normalization in Go&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;lemmatization&#34;&gt;Lemmatization&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;词干提取（stemming）和词形还原（lemmatization）&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html&#34; target=&#34;_blank&#34;&gt;Stemming and lemmatization&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.lexiconista.com/datasets/lemmatization/&#34; target=&#34;_blank&#34;&gt;Lemmatization Lists&lt;/a&gt;&lt;em&gt;&lt;sub&gt;Datasets by MBM &lt;/sub&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://unimorph.github.io/&#34; target=&#34;_blank&#34;&gt;The UniMorph Project&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;中文繁简转换
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/liuzl/gocc&#34; target=&#34;_blank&#34;&gt;gocc&lt;/a&gt; Golang version OpenCC&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/BYVoid/OpenCC&#34; target=&#34;_blank&#34;&gt;OpenCC&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/go-cc/cc-jianfan&#34; target=&#34;_blank&#34;&gt;Chinese-Character Jian&amp;lt;=&amp;gt;Fan converting library in Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/siongui/gojianfan&#34; target=&#34;_blank&#34;&gt;Traditional and Simplified Chinese Conversion in Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Han_unification&#34; target=&#34;_blank&#34;&gt;Han unification&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;tagging&#34;&gt;Tagging&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Regex tagger
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/mingrammer/commonregex&#34; target=&#34;_blank&#34;&gt;commonregex&lt;/a&gt;, a collection of common regular expressions for Go.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/mvdan/xurls&#34; target=&#34;_blank&#34;&gt;xurls&lt;/a&gt;, a Go package of regex for urls.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

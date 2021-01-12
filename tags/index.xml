@@ -58,6 +58,15 @@
     </item>
     
     <item>
+      <title>Language Model</title>
+      <link>/tags/language-model/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/language-model/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Logic</title>
       <link>/tags/logic/</link>
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
@@ -87,7 +96,7 @@
     <item>
       <title>NLP</title>
       <link>/tags/nlp/</link>
-      <pubDate>Thu, 15 Nov 2018 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0800</pubDate>
       
       <guid>/tags/nlp/</guid>
       <description></description>
@@ -96,7 +105,7 @@
     <item>
       <title>NLU</title>
       <link>/tags/nlu/</link>
-      <pubDate>Thu, 15 Nov 2018 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0800</pubDate>
       
       <guid>/tags/nlu/</guid>
       <description></description>
@@ -117,6 +126,24 @@
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
       
       <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QA</title>
+      <link>/tags/qa/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/qa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QANLU</title>
+      <link>/tags/qanlu/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/qanlu/</guid>
       <description></description>
     </item>
     

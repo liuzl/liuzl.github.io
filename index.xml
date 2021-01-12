@@ -11,6 +11,32 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Language Model Is All You Need — Explores NLU as QA</title>
+      <link>/post/qanlu-language-model-is-all-you-need/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>/post/qanlu-language-model-is-all-you-need/</guid>
+      <description>&lt;p&gt;New research from Amazon Alexa AI posits that current natural language understanding (NLU) approaches are far from how humans understand language, and asks whether all NLU problems could be efficiently and effectively mapped to question-answering (QA) problems using transfer learning.&lt;/p&gt;
+
+&lt;p&gt;Transfer learning is an ML approach for applying knowledge learned from a source domain to a target domain. It has produced promising results in natural language processing (NLP), particularly when transferring learning from high data domains to low data domains. The Amazon researchers focus on a specific type of transfer learning, where the target domain is first mapped to the source domain.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/qanlu_fg1.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;NLU is taken as determining intent and slot or entity value in natural language utterances. The proposed &amp;ldquo;QANLU&amp;rdquo; approach builds slot and intent detection questions and answers based on NLU annotated data. QA models are first trained on QA corpora the fine-tuned on questions and answers created from the NLU annotated data. Through transfer learning, this contextual question-answering knowledage is then used for finding intents or slot values in text inputs.&lt;/p&gt;
+
+&lt;p&gt;Unlike previous approaches, QANLU focuses on how low resource applications and does not the design and training of new model architectures or extensive data preprocessing. This enables it to achieve strong results in slot and intent detection with an order of magnitude less data.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/qanlu_fg2.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The researchers conducted experiments on the ATIS and Restaurants-8k datasets, with QANLU in low data regimes and few-shot settings significantly outperforming sentence classification and token tagging approaches for intent and slot detection tasks, while also bettering the new IC/SF few-shot approach&amp;rsquo;s performance in NLU.&lt;/p&gt;
+
+&lt;p&gt;The researchers say future directions could include expanding beyond this configuration and across different NLP problems, measuring the transfer of knowledge across different NLP tasks, and studying how QANLU questions might be generated automatically based on context.&lt;/p&gt;
+
+&lt;p&gt;The paper &lt;em&gt;Language Model Is All You Need: Natural Language Understanding as Question Answering&lt;/em&gt; is on &lt;a href=&#34;https://arxiv.org/pdf/2011.03023.pdf&#34; target=&#34;_blank&#34;&gt;axXiv&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>从AI到IA，知识图谱信息抽取在智能审单业务中的应用实践</title>
       <link>/talk/aiprocon2020/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0800</pubDate>
@@ -977,48 +1003,6 @@ func main() {
       
       <guid>/goutil/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Illustration of the logistic map</title>
-      <link>/post/logistic-map/</link>
-      <pubDate>Thu, 15 Jun 2017 00:00:00 +0800</pubDate>
-      
-      <guid>/post/logistic-map/</guid>
-      <description>&lt;p&gt;Illustration of the logistic map, $x_{n+1} = f(x_n) = r \cdot x_n \cdot (1 - x_n)$&lt;/p&gt;
-
-&lt;p&gt;At $r_1=3$, a stable period $2^1=2$ orbit is born. At $r_2=3.449$ a stable period $2^2=4$ orbit is born. As $r$ continues to increase, the period doublings continue until $r_{\infty} \approx 3.56995$ after which chaotic dynamics begin to occur, interspersed with periodic windows.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Feigenbaum_constants&#34; target=&#34;_blank&#34;&gt;Feigeinbaum constant&lt;/a&gt; $\delta=4.6692\dots$ is the ratio of subsequent differences between the values of $r_n$ at which the period doubles, as $n$ approaches infinity.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
-import matplotlib.pyplot as plt
-import pylab
-
-def f(x, R):
-    return R * x * (1 - x)
-
-def run_simulation(R, x_0, num_steps):
-    x_list = np.zeros(num_steps)
-    x_list[0] = x_0   
-    for t in range(num_steps-1):
-        x_list[t+1] = f(x_list[t], R)       
-    return x_list
-
-def plot_two(x_list, y_list):
-    plt.plot(x_list)
-    plt.plot(y_list)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x_list = run_simulation(R=4, x_0=0.7, num_steps=50)
-y_list = run_simulation(R=4, x_0=0.70001, num_steps=50)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_two(x_list, y_list)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;/img/logistic_map_3_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
-</description>
     </item>
     
   </channel>

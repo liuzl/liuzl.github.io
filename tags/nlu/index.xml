@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020</copyright>
-    <lastBuildDate>Thu, 15 Nov 2018 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="/tags/nlu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Language Model Is All You Need — Explores NLU as QA</title>
+      <link>/post/qanlu-language-model-is-all-you-need/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>/post/qanlu-language-model-is-all-you-need/</guid>
+      <description>New research from Amazon Alexa AI posits that current natural language understanding (NLU) approaches are far from how humans understand language, and asks whether all NLU problems could be efficiently and effectively mapped to question-answering (QA) problems using transfer learning.
+Transfer learning is an ML approach for applying knowledge learned from a source domain to a target domain. It has produced promising results in natural language processing (NLP), particularly when transferring learning from high data domains to low data domains.</description>
+    </item>
     
     <item>
       <title>⛵ Learning Meaning in Natural Language Processing — The Semantics Mega-Thread</title>

@@ -49,11 +49,29 @@
     </item>
     
     <item>
+      <title>Database</title>
+      <link>/tags/database/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Information Extraction</title>
       <link>/tags/information-extraction/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/tags/information-extraction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information Retrieval</title>
+      <link>/tags/information-retrieval/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/information-retrieval/</guid>
       <description></description>
     </item>
     
@@ -148,6 +166,15 @@
     </item>
     
     <item>
+      <title>Search Engine</title>
+      <link>/tags/search-engine/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/search-engine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Semantic</title>
       <link>/tags/semantic/</link>
       <pubDate>Thu, 15 Nov 2018 00:00:00 +0800</pubDate>
@@ -162,6 +189,15 @@
       <pubDate>Sat, 11 Jul 2015 00:00:00 +0800</pubDate>
       
       <guid>/tags/system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vector</title>
+      <link>/tags/vector/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/vector/</guid>
       <description></description>
     </item>
     

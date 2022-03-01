@@ -11,6 +11,65 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Vector Search Engine</title>
+      <link>/post/vector-search-engine/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/post/vector-search-engine/</guid>
+      <description>
+
+&lt;p&gt;In deep learning era, suddenly everything was being represented as these high-dimensional vectors, that quickly became a huge source of data, so it you want to search, rank or give recommendations, the object in your actural database wasn&amp;rsquo;t a document or an image &amp;ndash; it was this mathematical representation of the deep learning model. In short, this quickly became important for a lot of companies.&lt;/p&gt;
+
+&lt;p&gt;As a result, vector search engines or vector databases became a core piece of infrasctracture that fuels every big deep learning deployment in industry.&lt;/p&gt;
+
+&lt;h2 id=&#34;vector-search-changes-business&#34;&gt;Vector search changes business&lt;/h2&gt;
+
+&lt;p&gt;Vector search is not only applicable to image and text content. It can also be used for information retrieval for anything you have in your business when you can define a vector to represent each thing. Here are a few examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Finding similar users: If you define a vector to represent each user in your business by combining the user’s activities, past purchase history, and other user attributes, then you can find all users similar to a specified user.  You can then see, for example, users who are purchasing similar products, users that are likely bots, or users who are potential premium customers and who should be targeted with digital marketing.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Finding similar products or items: With a vector generated from product features such as description, price, sales location, and so on, you can find similar products to answer any number of questions; for example, &amp;ldquo;What other products do we have that are similar to this one and may work for the same use case?&amp;rdquo; or &amp;ldquo;What products sold in the last 24 hours in this area?” (based on time and proximity)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Finding defective IoT devices: With a vector that captures the features of defective devices from their signals, vector search enables you to instantly find potentially defective devices for proactive maintenance.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Finding ads: Well-defined vectors let you find the most relevant or appropriate ads for viewers in milliseconds at high throughput.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Finding security threats: You can identify security threats by vectorizing the signatures of computer virus binaries or malicious attack behaviors against web services or network equipment.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&amp;hellip;and many more: Thousands of different applications of vector search in all industries will likely emerge in the next few years, making the technology as important as relational databases.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;OK, vector search sounds cool. But what are the major challenges to applying the technology to real business use cases? Actually there are two:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Creating vectors that are meaningful for business use cases&lt;/li&gt;
+&lt;li&gt;Building a fast and scalable vector search service&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;embeddings-meaningful-vectors-for-business-use-cases&#34;&gt;Embeddings: meaningful vectors for business use cases&lt;/h2&gt;
+
+&lt;p&gt;todo&lt;/p&gt;
+
+&lt;h2 id=&#34;building-a-fast-and-scalable-vector-search-service&#34;&gt;Building a fast and scalable vector search service&lt;/h2&gt;
+
+&lt;p&gt;todo&lt;/p&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Facebook. &lt;a href=&#34;https://github.com/facebookresearch/faiss&#34; target=&#34;_blank&#34;&gt;A library for efficient similarity search and clustering of dense vectors.&lt;/a&gt;, Feb 19, 2017.&lt;/li&gt;
+&lt;li&gt;Zilliz. &lt;a href=&#34;https://github.com/milvus-io/milvus&#34; target=&#34;_blank&#34;&gt;An open-source vector database for scalable similarity search and AI applications.&lt;/a&gt;, Mar 17, 2019.&lt;/li&gt;
+&lt;li&gt;Microsoft. &lt;a href=&#34;https://github.com/microsoft/SPTAG&#34; target=&#34;_blank&#34;&gt;A distributed approximate nearest neighborhood search (ANN) library which provides a high quality vector index build, search and distributed online serving toolkits for large scale vector search scenario.&lt;/a&gt;, Sep 9, 2018.&lt;/li&gt;
+&lt;li&gt;Semi-technologies. &lt;a href=&#34;https://github.com/semi-technologies/weaviate&#34; target=&#34;_blank&#34;&gt;Weaviate is a cloud-native, modular, real-time vector search engine&lt;/a&gt;, Mar 27, 2016.&lt;/li&gt;
+&lt;li&gt;Qdrant. &lt;a href=&#34;https://github.com/qdrant/qdrant&#34; target=&#34;_blank&#34;&gt;Vector similarity search engine with extended filtering support&lt;/a&gt;, May 24, 2020.&lt;/li&gt;
+&lt;li&gt;Pinecone. &lt;a href=&#34;https://www.pinecone.io/&#34; target=&#34;_blank&#34;&gt;Vector Database for Similarity Search&lt;/a&gt;, Apr 18, 2021.&lt;/li&gt;
+&lt;li&gt;Vald. &lt;a href=&#34;https://github.com/vdaas/vald&#34; target=&#34;_blank&#34;&gt;A Highly Scalable Distributed Vector Search Engine&lt;/a&gt;, Aug 25, 2019.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Language Model Is All You Need — Explores NLU as MRC QA</title>
       <link>/post/qanlu-language-model-is-all-you-need/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0800</pubDate>
@@ -994,15 +1053,6 @@ func main() {
 &lt;li&gt;&lt;code&gt;t2hk&lt;/code&gt; Traditional Chinese (OpenCC Standard) to Hong Kong Standard&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>goutil</title>
-      <link>/goutil/</link>
-      <pubDate>Mon, 20 Nov 2017 10:00:00 +0000</pubDate>
-      
-      <guid>/goutil/</guid>
-      <description></description>
     </item>
     
   </channel>

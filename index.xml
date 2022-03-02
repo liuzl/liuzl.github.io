@@ -59,8 +59,9 @@
 
 &lt;ol&gt;
 &lt;li&gt;Facebook. &lt;a href=&#34;https://github.com/facebookresearch/faiss&#34; target=&#34;_blank&#34;&gt;A library for efficient similarity search and clustering of dense vectors.&lt;/a&gt;, Feb 19, 2017.&lt;/li&gt;
+&lt;li&gt;Y.Malkov. &lt;a href=&#34;https://github.com/nmslib/hnswlib&#34; target=&#34;_blank&#34;&gt;Header-only C++/python library for fast approximate nearest neighbors&lt;/a&gt;, Jul 2, 2017.&lt;/li&gt;
 &lt;li&gt;Zilliz. &lt;a href=&#34;https://github.com/milvus-io/milvus&#34; target=&#34;_blank&#34;&gt;An open-source vector database for scalable similarity search and AI applications.&lt;/a&gt;, Mar 17, 2019.&lt;/li&gt;
-&lt;li&gt;Microsoft. &lt;a href=&#34;https://github.com/microsoft/SPTAG&#34; target=&#34;_blank&#34;&gt;A distributed approximate nearest neighborhood search (ANN) library which provides a high quality vector index build, search and distributed online serving toolkits for large scale vector search scenario.&lt;/a&gt;, Sep 9, 2018.&lt;/li&gt;
+&lt;li&gt;Microsoft. &lt;a href=&#34;https://github.com/microsoft/SPTAG&#34; target=&#34;_blank&#34;&gt;Space Partition Tree And Graph&lt;/a&gt;, Sep 9, 2018.&lt;/li&gt;
 &lt;li&gt;Semi-technologies. &lt;a href=&#34;https://github.com/semi-technologies/weaviate&#34; target=&#34;_blank&#34;&gt;Weaviate is a cloud-native, modular, real-time vector search engine&lt;/a&gt;, Mar 27, 2016.&lt;/li&gt;
 &lt;li&gt;Qdrant. &lt;a href=&#34;https://github.com/qdrant/qdrant&#34; target=&#34;_blank&#34;&gt;Vector similarity search engine with extended filtering support&lt;/a&gt;, May 24, 2020.&lt;/li&gt;
 &lt;li&gt;Pinecone. &lt;a href=&#34;https://www.pinecone.io/&#34; target=&#34;_blank&#34;&gt;Vector Database for Similarity Search&lt;/a&gt;, Apr 18, 2021.&lt;/li&gt;

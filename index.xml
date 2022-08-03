@@ -11,6 +11,87 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>UIE - Universal Information Extraction</title>
+      <link>/post/universal-information-extraction/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/post/universal-information-extraction/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;/img/uie.jpg&#34; alt=&#34;jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;text2structure-structure-extraction-language&#34;&gt;Text2Structure - Structure Extraction Language&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;(
+    (Spot Name: Info Span
+        (Asso Name: Info Span)
+        (Asso Name: Info Span)
+    )
+)
+# Structure extrating language (SEL) for Universal IE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Spot Name&lt;/code&gt; represents there is a specific information piece with the type of spot name existing in the source text.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Asso Name&lt;/code&gt; indicates there exists a specific information piece in the source text that is with the AssoName association to its upper-level Spotted information in the structure.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Info Span&lt;/code&gt; represents the text span corresponding to the specific spotting or associating information piece in the source text.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Following is an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(
+    (person: Steve
+        (work for: Apple)
+    )
+    (start-position: became
+        (employee: Steve)
+        (employer: Apple)
+        (title: CEO)
+        (time: 1997)
+    )
+    (orgnization: Apple)
+    (time: 1997)
+)
+# The SEL representation for &amp;quot;Steve became CEO of Apple in 1997.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;prompt-paradigm&#34;&gt;Prompt paradigm&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;feature engineering -&amp;gt; neural network architechure engineering -&amp;gt; fine tuning -&amp;gt; prompt engineering&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;how-to-choose-prompt&#34;&gt;How to choose prompt&lt;/h3&gt;
+
+&lt;p&gt;Different prompts have different zero-shot or few-shot capbilities. For example, the prompt for extrating person name could be:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Which people are contained in the original text?&lt;/li&gt;
+&lt;li&gt;Who are in the text?&lt;/li&gt;
+&lt;li&gt;What are the names?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;UIE对Prompt的统一：UIE通过大量数据训练固定了Prompt的构造方式，就是&lt;code&gt;条件+抽取标签&lt;/code&gt;，省去了传统Prompt选择太多的问题。&lt;/p&gt;
+
+&lt;p&gt;Prompt和原文越相似，效果越好。&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;UIE可以统一建模不同信息抽取任务，按需自适应地生成目标抽取结构，并从不同的知识来源统一学习通用信息抽取能力。&lt;/p&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Yaojie Lu, etc, from CAS, Baidu and BAAI. &lt;a href=&#34;https://arxiv.org/pdf/2203.12277.pdf&#34; target=&#34;_blank&#34;&gt;Unified Structure Generation for Universal Information Extraction.&lt;/a&gt;, ACL 2022.&lt;/li&gt;
+&lt;li&gt;PaddleNLP - UIE. &lt;a href=&#34;https://github.com/PaddlePaddle/PaddleNLP/tree/develop/model_zoo/uie&#34; target=&#34;_blank&#34;&gt;通用信息抽取 UIE(Universal Information Extraction)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1Q34y1E7SW/&#34; target=&#34;_blank&#34;&gt;通用信息抽取技术与产业应用实战&lt;/a&gt;, 2022.5.21&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV19g411Z7rZ/&#34; target=&#34;_blank&#34;&gt;《UIE：基于统一结构生成的通用信息抽取》-韩先培&lt;/a&gt;, 2022.7.22&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/universal-ie/UIE&#34; target=&#34;_blank&#34;&gt;https://github.com/universal-ie/UIE&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Vector Search Engine</title>
       <link>/post/vector-search-engine/</link>
       <pubDate>Tue, 01 Mar 2022 00:00:00 +0800</pubDate>
@@ -978,80 +1059,6 @@ vf.be.equ(nf.math.product(nf.list(math.number, 3, mf.consecutive)), 60);
 &lt;li&gt;查询意图排序，基于候选意图结果的终判模块&lt;/li&gt;
 &lt;li&gt;下游分类别知识库系统/垂直搜索系统&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>gocc: Golang version OpenCC 繁簡轉換</title>
-      <link>/project/gocc/</link>
-      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/project/gocc/</guid>
-      <description>
-
-&lt;h2 id=&#34;introduction-介紹&#34;&gt;Introduction 介紹&lt;/h2&gt;
-
-&lt;p&gt;gocc is a golang port of OpenCC(&lt;a href=&#34;https://github.com/BYVoid/OpenCC/&#34; target=&#34;_blank&#34;&gt;Open Chinese Convert 開放中文轉換&lt;/a&gt;) which is a project for conversion between Traditional and Simplified Chinese developed by &lt;a href=&#34;https://www.byvoid.com/&#34; target=&#34;_blank&#34;&gt;BYVoid&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;gocc stands for &amp;ldquo;&lt;strong&gt;Go&lt;/strong&gt;lang version Open&lt;strong&gt;CC&lt;/strong&gt;&amp;rdquo;, it is a total rewrite version of OpenCC by Go. It just borrows the dict files and config files of OpenCC, so it may not produce the same output with the original OpenCC.&lt;/p&gt;
-
-&lt;h2 id=&#34;installation-安裝&#34;&gt;Installation 安裝&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-golang-package&#34;&gt;1, golang package&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go get github.com/liuzl/gocc
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;2-command-line&#34;&gt;2, Command Line&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git clone https://github.com/liuzl/gocc
-cd gocc/cmd
-make install
-gocc --help
-echo &amp;quot;我们是工农子弟兵&amp;quot; | gocc
-#我們是工農子弟兵
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;usage-使用&#34;&gt;Usage 使用&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
-
-import (
-    &amp;quot;fmt&amp;quot;
-    &amp;quot;github.com/liuzl/gocc&amp;quot;
-    &amp;quot;log&amp;quot;
-)
-
-func main() {
-    s2t, err := gocc.New(&amp;quot;s2t&amp;quot;)
-    if err != nil {
-        log.Fatal(err)
-    }
-    in := `自然语言处理是人工智能领域中的一个重要方向。`
-    out, err := s2t.Convert(in)
-    if err != nil {
-        log.Fatal(err)
-    }
-    fmt.Printf(&amp;quot;%s\n%s\n&amp;quot;, in, out)
-    //自然语言处理是人工智能领域中的一个重要方向。
-    //自然語言處理是人工智能領域中的一個重要方向。
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;conversions&#34;&gt;Conversions&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;s2t&lt;/code&gt; Simplified Chinese to Traditional Chinese&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;t2s&lt;/code&gt; Traditional Chinese to Simplified Chinese&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;s2tw&lt;/code&gt; Simplified Chinese to Traditional Chinese (Taiwan Standard)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;tw2s&lt;/code&gt; Traditional Chinese (Taiwan Standard) to Simplified Chinese&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;s2hk&lt;/code&gt; Simplified Chinese to Traditional Chinese (Hong Kong Standard)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hk2s&lt;/code&gt; Traditional Chinese (Hong Kong Standard) to Simplified Chinese&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;s2twp&lt;/code&gt; Simplified Chinese to Traditional Chinese (Taiwan Standard) with Taiwanese idiom&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;tw2sp&lt;/code&gt; Traditional Chinese (Taiwan Standard) to Simplified Chinese with Mainland Chinese idiom&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;t2tw&lt;/code&gt; Traditional Chinese (OpenCC Standard) to Taiwan Standard&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;t2hk&lt;/code&gt; Traditional Chinese (OpenCC Standard) to Hong Kong Standard&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

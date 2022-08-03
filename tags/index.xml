@@ -60,7 +60,7 @@
     <item>
       <title>Information Extraction</title>
       <link>/tags/information-extraction/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0800</pubDate>
       
       <guid>/tags/information-extraction/</guid>
       <description></description>
@@ -139,11 +139,29 @@
     </item>
     
     <item>
+      <title>Pre-training</title>
+      <link>/tags/pre-training/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/pre-training/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Programming</title>
       <link>/tags/programming/</link>
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0800</pubDate>
       
       <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prompt</title>
+      <link>/tags/prompt/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/prompt/</guid>
       <description></description>
     </item>
     
@@ -189,6 +207,24 @@
       <pubDate>Sat, 11 Jul 2015 00:00:00 +0800</pubDate>
       
       <guid>/tags/system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Text to Structure</title>
+      <link>/tags/text-to-structure/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/text-to-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unified Structure</title>
+      <link>/tags/unified-structure/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/unified-structure/</guid>
       <description></description>
     </item>
     

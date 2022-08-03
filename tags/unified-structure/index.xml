@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unified Structure on Zhanliang Liu</title>
+    <link>/tags/unified-structure/</link>
+    <description>Recent content in Unified Structure on Zhanliang Liu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2022</copyright>
+    <lastBuildDate>Wed, 03 Aug 2022 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/unified-structure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UIE - Universal Information Extraction</title>
+      <link>/post/universal-information-extraction/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0800</pubDate>
+      
+      <guid>/post/universal-information-extraction/</guid>
+      <description>Text2Structure - Structure Extraction Language ( (Spot Name: Info Span (Asso Name: Info Span) (Asso Name: Info Span) ) ) # Structure extrating language (SEL) for Universal IE   Spot Name represents there is a specific information piece with the type of spot name existing in the source text. Asso Name indicates there exists a specific information piece in the source text that is with the AssoName association to its upper-level Spotted information in the structure.</description>
+    </item>
+    
+  </channel>
+</rss>
